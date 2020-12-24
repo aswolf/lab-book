@@ -14,3 +14,7 @@ pandoc --css ../templates/main.css -t html5 -B ../templates/head.html -A ../temp
 pandoc --css ../templates/main.css -t html5 -B ../templates/head.html -A ../templates/foot.html --mathjax -o 2020-12-18-equilibrium-paper-draft.html -s 2020-12-18-equilibrium-paper-draft.md
 
 pandoc --template=../templates/pandoc-template.html --css ../templates/main.css -t html5 -B ../templates/head.html -A ../templates/foot.html --mathjax -o 2020-12-18-equilibrium-paper-draft.html -s 2020-12-18-equilibrium-paper-draft.md
+
+
+
+pandoc --template=../templates/post.html --css ../templates/main.css -t html5 -B ../templates/head.html -A ../templates/foot.html --mathjax -o 2020-12-18-equilibrium-paper-draft.html -s 2020-12-18-equilibrium-paper-draft.md
