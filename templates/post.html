@@ -40,44 +40,45 @@
 
   <!-- Add post and post-header here -->
 
-  <div class="post">
-    <header class="post-header">
-      $if(title)$
-        <header id="title-block-header">
-          <h1 class="title">$title$</h1>
-          $if(subtitle)$
-            <p class="subtitle">$subtitle$</p>
-          $endif$
-
-          $for(author)$
-            <p class="author">$author$</p>
-          $endfor$
-          $if(date)$
-            <p class="date">$date$</p>
-          $endif$
-        </header>
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+  $if(title)$
+    <header id="title-block-header">
+      <h1 class="title">$title$</h1>
+      $if(subtitle)$
+        <p class="subtitle">$subtitle$</p>
       $endif$
 
-      <class="post-meta">
-        <h4> Related Posts: </h4>
-      </class>
+      $for(author)$
+        <p class="author">$author$</p>
+      $endfor$
+      $if(date)$
+        <p class="date">$date$</p>
+      $endif$
     </header>
-    <br>
+  $endif$
 
-    <!-- motivation here -->
+  <!-- Related post info here -->
+    <!-- <class="post-meta"> -->
+      <!-- <h4> Related Posts: </h4> -->
+    <!-- </class> -->
+  <!-- </header> -->
+  <!-- <br> -->
 
-    <!-- key-points here -->
+  <!-- motivation here -->
 
-    <article class="post-content">
-      <!-- content -->
-      $body$
-    </article>
+  <!-- key-points here -->
 
-    <!-- future-work here -->
+  <article class="post-content">
+    <!-- content -->
+    $body$
+  </article>
 
-    $for(include-after)$
-      $include-after$
-    $endfor$
+  <!-- future-work here -->
+
+  $for(include-after)$
+    $include-after$
+  $endfor$
 </body>
 
 </html>
