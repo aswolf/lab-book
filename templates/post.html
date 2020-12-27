@@ -49,23 +49,53 @@
         <p class="subtitle">$subtitle$</p>
       $endif$
 
-      $for(author)$
-        <p class="author">$author$</p>
-      $endfor$
-      $if(date)$
-        <p class="date">$date$</p>
-      $endif$
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+        $if(author)$ $author$ $endif$
+        &nbsp;&nbsp;
+        $if(date)$ ($date$) $endif$
+      </h2>
     </header>
   $endif$
 
   <!-- Related post info here -->
-    <!-- <class="post-meta"> -->
-      <!-- <h4> Related Posts: </h4> -->
-    <!-- </class> -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4> $if(prev)$
+      &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="$prev.post$.html">
+        $prev.title$</a>
+    $endif$ </h4>
+
+    <h4> $if(next)$
+      &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href="$next.post$.html">
+        $next.title$</a>
+    $endif$ </h4>
+
+  </class>
   <!-- </header> -->
-  <!-- <br> -->
+
+  <br>
 
   <!-- motivation here -->
+  $if(motivation)$
+    <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> $motivation$ </em> </b>
+    </div>
+  $endif$
+
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+      $for(key-points)$
+        <li> $it$ </li>
+      $endfor$
+    </ul>
+  </div>
 
   <!-- key-points here -->
 
@@ -75,6 +105,13 @@
   </article>
 
   <!-- future-work here -->
+
+  $if(future-work)$
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> $future-work$ </em> </b>
+    </div>
+  $endif$
 
   $for(include-after)$
     $include-after$

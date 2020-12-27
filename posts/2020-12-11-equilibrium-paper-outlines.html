@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2020-12-11" />
+    
+  <title>Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="../templates/main.css" />
+      <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="http://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2020-12-11) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="2020-12-04-basic-solution-perturbation-models.html">
+        Basic composition-perturbation models for solution phases</a>
+     </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href="2020-12-18-equilibrium-paper-draft.html">
+        Urgently seeking equilibrium Working Draft (Paper I)</a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> For this week, I have developed an article template for use with the markdown-based ‘pandoc-scholar’ software. It uses a simplified (hassle-free) markdown input file, which is then processed to simultaneously produce many output formats including html, pdf, latex, docx (word), odt, epub. The goal is to produce a manuscript for submission to journals where only minor modifications (if any) need be applied to the final submitted file. When in doubt, let the copy editors take care of it. With this manuscript preparation in mind, I present an outline for the current equilibrium algorithm focused manuscripts. These outlines combined with previous lab-book posts will form the basis for a first draft using the new pandoc-scholar-template I have developed. </em> </b>
+    </div>
+  
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+              <li> markdown approach to manuscript creation is simple and convenient </li>
+              <li> allows focus to remain on content rather than formatting details </li>
+              <li> outline for equilibrium papers is presented </li>
+              <li> draft paper is underway using the markdown template </li>
+          </ul>
+  </div>
+
+  <!-- key-points here -->
+
+  <article class="post-content">
+    <!-- content -->
+    <h1 id="markdown-based-manuscripts-with-pandoc-scholar">Markdown-based manuscripts with pandoc-scholar</h1>
+    <p>A lot of time is wasted on formatting for journals that completely reformat the article to their liking in the final stage anyway. <strong>Let’s avoid that.</strong></p>
+    <p>The ‘pandoc-scholar’ software provides a set of generalized templates that automatically creates nice academic manuscript files in a huge set of formats simultaneously. This allows you to write the manuscript in plain text markdown, and then distribute to colleagues or submit to journal in any required format. The key insight to this approach is <strong>Do not waste effort fiddling with the format</strong>. The manuscript file contains all the content, and journals can worry about formatting details. Any changes that are absolutely required for submission should be applied manually to the output file just before submission.</p>
+    <p>I have customized and extended this approach by developing my own <a href="https://github.com/aswolf/pandoc-scholar-template">pandoc-scholar-template</a>. This is presented in the form of a manuscript that describes the markdown-to-manuscript capabilities it demonstrates. * The current version of the pandoc-scholar-template <a href="pandoc-scholar-template.html">manuscript can be found here</a>, presented in both html and pdf formats.</p>
+    <h1 id="equilibrium-algorithms-manuscript-outlines">Equilibrium Algorithms Manuscript Outlines</h1>
+    <p>Below I include rough outlines for a pair of companion papers in preparation describing our new computational equilibrium algorithms.</p>
+    <h2 id="the-problem-lab-book-post">The problem <strong>[[lab-book-post]]</strong></h2>
+    <ul>
+    <li>modeling equilibrium assemblages is generally very slow, holding back planetary understanding</li>
+    <li>especially problematic in Monte Carlo applications (e.g. exoplanet studies, MCS for igneous suite inference)</li>
+    <li>Existing tools are often too slow, not sufficiently robust, or rely on special conditions (e.g. melt-present)
+    <ul>
+    <li>MELTS</li>
+    <li>THERMOCALC</li>
+    <li>THERIAK</li>
+    <li>PerpleX (inaccessible composition space)</li>
+    <li>Hephestos</li>
+    </ul></li>
+    <li>Many tools are locked to specific thermodynamic database making comparison difficult (e.g. MELTS, THERMOCALC, Hephestos)</li>
+    </ul>
+    <h3 id="paper-1">Paper 1</h3>
+    <ul>
+    <li>title: ‘Urgently seeking equilibrium: I. Rapid and robust phase saturation calaculations with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)’</li>
+    <li>MEXQAL phase saturation algorithm</li>
+    <li>Equilibrium of individual phases with environment</li>
+    <li>motivate BOTH papers 1 and 2</li>
+    <li>optimized algorithm underlying full equilibration algorithm (described in paper 2)</li>
+    <li>Metastable Equilibrium phase properties obtained for imposed environmental conditions</li>
+    <li>Consider simple vs Complex phases</li>
+    <li>Geological Benchmarks <strong>[[lab-book-post]]</strong>
+    <ul>
+    <li>simple to complex phases</li>
+    <li>robust convergence</li>
+    <li>fast results</li>
+    <li>compare w/ existing tools??</li>
+    <li><strong>Objective C implementation likely required</strong></li>
+    </ul></li>
+    <li>Miscibility gaps and exsolution <strong>[[lab-book-post]]</strong>
+    <ul>
+    <li>employs simplified deCapitani algorithm</li>
+    </ul></li>
+    <li>Miscibility gaps for complex phases <strong>[[lab-book-post]]</strong>
+    <ul>
+    <li>w/ structural transition (like Cpx)</li>
+    <li>include in paper 1 if possible</li>
+    <li>special case of phase with identical endmembers should be possible</li>
+    <li>3 phase triangle</li>
+    </ul></li>
+    <li>Gap finder algorithm? <strong>[[lab-book-post]]</strong>
+    <ul>
+    <li><strong>Do we need a method to trace miscibility gaps?</strong></li>
+    <li>Find exteremum of concavity of Gibbs surface</li>
+    <li>Use simulated annealing or MCMC to explore/map-out concave down regions of composition space</li>
+    <li>Then run MEXQAL to trace boundary edges</li>
+    <li>comment on calibration opportunities</li>
+    </ul></li>
+    <li>application demos:
+    <ul>
+    <li>exsovled Fe-rich liquid phase vs SiO2 rich</li>
+    <li>Feldspar geo-thermometer</li>
+    <li>cpx 3 phase triangle?</li>
+    </ul></li>
+    </ul>
+    <h3 id="paper-2">Paper 2</h3>
+    <ul>
+    <li>title: <strong>Urgently seeking equilibrium: II. Computing phase assemblages with confidence using the sunken hull method</strong></li>
+    <li>Equilibrate full assemblage w/ sunken hull method</li>
+    <li>Especially subsolidus assemblages</li>
+    <li>Robust fallback for optimized MELTS algorithm</li>
+    <li>use MEXQAL finds equil state for individual phases</li>
+    <li>Sunken Hull Algorithm</li>
+    <li>demonstrate efficacy</li>
+    <li>Benchmark speed</li>
+    <li>Show utility on subsolidus assemblages (MELTS &amp; Stixrude databases)</li>
+    <li>application to pyrolite, MORB, etc</li>
+    </ul>
+  </article>
+
+  <!-- future-work here -->
+
+      <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> In future weeks, these outlines will be combined with the posts already made to this site to produce a rough draft of the first paper. This is already in progress, and will be posted here in future weeks, once greater revision has been carried out. The manuscript uses the same pandoc-scholar-template described and linked above. This approach appears to be incredibly powerful for keeping things simple and professional, and reducing unnecessary work in porting lab-book posts directly into the manuscript. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      </body>
+      </html>
+  </body>
+
+</html>
