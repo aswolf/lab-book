@@ -23,7 +23,7 @@ The content of this working draft was taken from the lab posts over the last mon
 After pasting them into the template, they were iteratively reworked to build a coherent narrative.
 The current version of the working draft can be found here:
 
-* [Working draft of 'Urgently seeking equilibrium' Paper I](2020-12-18-MEXQAL-working-draft.html)
+* [Working draft of 'Urgently seeking equilibrium' Paper I](docs/2020-12-18-MEXQAL-working-draft.html)
 
 A critical added element to the process is inclusion of editorial comments marked with my initials (NOTE ASW), shown in bold.
 Additionally, the main topic of each section is given in italicized comments marked 'gist'.
