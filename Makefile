@@ -7,6 +7,7 @@ images = $(wildcard images/*)
 
 .PHONY : all
 all : templates images docs posts
+	touch docs/.nojekyll
 
 .PHONY : templates
 templates : templates/*
