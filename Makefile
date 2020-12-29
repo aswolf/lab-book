@@ -30,7 +30,7 @@ posts : $(posts_html)
 
 # site index (uses default pandoc html template)
 docs/index.html : posts/index.md $(templates) $(images)
-	pandoc --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
+	pandoc --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
 
 # all posts use custom post.html pandoc template
 docs/%.html : posts/%.md $(templates) $(images)
