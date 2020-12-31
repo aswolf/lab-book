@@ -33,8 +33,10 @@ docs/index.html : posts/index.md $(templates) $(images)
 	pandoc --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
 
 
-# site index (uses default pandoc html template)
 docs/projects.html : posts/projects.md $(templates) $(images)
+	pandoc --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
+
+docs/writing-tracker.html : posts/writing-tracker.md $(templates) $(images)
 	pandoc --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
 
 # all posts use custom post.html pandoc template

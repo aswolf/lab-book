@@ -38,6 +38,40 @@ code.has-jax {font: inherit;
 * html #navigation a {width:1%;}
 #navigation .selected,#navigation a:hover {background:#AFB595; color:#ffffff; text-decoration:none;}
 
+/* #iframe {
+    zoom: 0.75;
+}
+width="100%" height="1000"  */
+#wrap {
+  width: 750px;
+  height: 1500px;
+  padding: 0;
+  overflow: hidden;
+}
+
+#scaled-frame {
+  width: 181%;
+  height: 1100px;
+  border: 0px;
+}
+
+#scaled-frame {
+  zoom: 0.55;
+  -moz-transform: scale(0.55);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.55);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.55);
+  -webkit-transform-origin: 0 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #scaled-frame {
+    zoom: 1;
+  }
+}
+
+
 
 /* Content styles */
 /* Applies to EVERYTHING! (must be overriden with !important */
