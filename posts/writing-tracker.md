@@ -17,7 +17,7 @@ active: tracker
 ## <a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit?usp=sharing?widget=false&amp;headers=false&amp;">See full writing-tracker</a>
 
 ## Recent writing progress
-<iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcK-ZnHt47wbMb3BXd_aXVE5S8U4Ln7fqsw8pRo6-AP0EJrBp3ujK_niBJOI09GGzVovERVaLHUmvf/pubhtml?single=true&gid=0&widget=true&amp;headers=false&amp;range=A53:J96"></iframe>
+<iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcK-ZnHt47wbMb3BXd_aXVE5S8U4Ln7fqsw8pRo6-AP0EJrBp3ujK_niBJOI09GGzVovERVaLHUmvf/pubhtml?single=true&gid=0&widget=true&amp;headers=false&amp;range=A53:J98"></iframe>
 
 <!-- <iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcK-ZnHt47wbMb3BXd_aXVE5S8U4Ln7fqsw8pRo6-AP0EJrBp3ujK_niBJOI09GGzVovERVaLHUmvf/pubhtml?single=true&gid=0&widget=true&amp;headers=false&amp;range=A1:J26"></iframe> -->
 <!-- <iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit?usp=sharing?widget=false&amp;headers=false&amp;"></iframe> -->

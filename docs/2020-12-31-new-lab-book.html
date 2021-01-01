@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2020-12-31" />
+    
+  <title>New open lab notebook prototype</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+      <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">New open lab notebook prototype</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2020-12-31) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="2020-12-11-equilibrium-paper-outlines.html">
+        Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms</a>
+     </h4>
+
+    <h4>  </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> Given all the distractions of the holiday season, I decided to focus on getting my writing productivity system fully set up. This requires a tight integration of how weekly posts and manuscripts are produced, allowing easy incorporation of posts into growing manuscripts. This post highlights the devleopment work of the past couple weeks. </em> </b>
+    </div>
+  
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+              <li> lab-book posts &amp; manuscripts need different syntax for figures, citations, &amp; document references </li>
+              <li> writing workflow from notebook to manuscript is hindered by differences </li>
+              <li> new lab-book site demonstrates working prototype using identical software (pandoc) for creating lab-book posts and manuscripts </li>
+              <li> new lab-book is hosted in its own dedicated github repo, enabling others to use &amp; shape this developing scientific writing ecosystem </li>
+          </ul>
+  </div>
+
+  <!-- key-points here -->
+
+  <article class="post-content">
+    <!-- content -->
+    <h2 id="easing-the-path-from-notebook-to-manuscript">Easing the path from notebook to manuscript</h2>
+    <p>As discussed in a previous post, the <em>pandoc-scholar</em> software enables rapid production and sharing of manuscripts in many formats, based on a single markdown input format. The input format for this lab-book is also markdown, so we should easily transition from a collection of posts to a draft manuscript. But standing in the way of this theoretically smooth workflow was the fact that the lab-book was built upon github-flavored markdown using the program jekyll as the website generator. Input files for jekyll and pandoc are similar, but not identical—as always the devil is in the details. Several key document features use completely different syntax between these two website-site-generation tools; these include figures, literature citations, document section references, figure and table references, and detailed formatting of complex equations. Converting between these formats introduces unwanted resistance in the writing process—let’s fix that.</p>
+    <h2 id="a-pandoc-powered-lab-notebook">A pandoc-powered lab notebook</h2>
+    <p>The most straightforward solution to challenge is using the same underlying software engine, pandoc, to generate both the lab notebook and the eventual manuscript. Unfortunately, a pandoc-driven website generator does not exist (at least not in a standard and easily tweakable form). Developers have created some software solutions spanning the range of very simple to overly complex, but none of them are capable of easily delivering the desired a customizable website generator that fully integrates with pandoc-scholar—until now. You are currently looking at the first working prototype.</p>
+    <p>My completely remade open lab-notebook is now hosted in its own dedicated public github repository <a href="https://github.com/aswolf/lab-book">github.com/aswolf/lab-book</a>. The site itself is generated using pandoc driven by a simple Makefile. It is designed to recreate the look and feel of the original notebook—but by virtue of its pandoc-powered implementation—seemless integrates every feature and syntax detail available in a pandoc-scholar manuscript. To round out the new experience, I have cleaned up the labbook site, added new links to my daily writing tracker &amp; projects page, and selected an appropriate banner image for the site from my favorite mathematical illustrator M. C. Escher.</p>
+  </article>
+
+  <!-- future-work here -->
+
+      <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> The creation of this new pandoc-powered lab-book software is a major step on my journey toward a seemless writing workflow. I look forward to enjoying the fruits of this labor in 2021. Goodbye 2020–and good riddance. Let’s make it a productive new year, practicing good habits, and creating as much meaning as possible along the way. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>

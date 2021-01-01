@@ -13,16 +13,17 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(12/18/2020)*
+## Latest Posting *(12/31/2020)*
 
-* [**Urgently seeking equilibrium Working Draft (Paper I)**](2020-12-18-equilibrium-paper-draft.html)
+* [**New open lab notebook prototype**](2020-12-31-new-lab-book.html)
 
-## Next Posting *(Due: 12/31/2020)*
-* **Note week off for XMAS**
+## Next Posting *(Due: 01/07/2021)*
+* **TBD**
 
 </div>
 
 ## Past Entries
+* [*2020-12-31:* **New open lab notebook prototype**](2020-12-31-new-lab-book.html)
 * [*2020-12-18:* **Urgently seeking equilibrium Working Draft (Paper I)**](2020-12-18-equilibrium-paper-draft.html)
 * [*2020-12-11:* **Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms**](2020-12-11-equilibrium-paper-outlines.html)
 * [*2020-12-04:* **Basic composition-perturbation models for solution phases**](2020-12-04-basic-solution-perturbation-models.html)
