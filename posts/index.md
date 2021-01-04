@@ -17,8 +17,8 @@ Providing a public view of scientific research work has numerous advantages:
 
 * [**New open lab notebook prototype**](2020-12-31-new-lab-book.html)
 
-## Next Posting *(Due: 01/07/2021)*
-* **TBD**
+## Next Posting *(Due: 01/08/2021)*
+* **Theory of Vaporized Rocks**
 
 </div>
 
