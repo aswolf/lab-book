@@ -44,23 +44,21 @@ future-work:
 To quantitatively study rock vaporization processes, we must have a complete set of accurate thermodynamic models for condensed and vapor phases sampling broad ranges in composition and temperature.
 It is critical that these solution models faithfully represent geologically realistic mixed compositions, including minor components which play key roles in vaporization due to their high volatilities, reflecting strong preferences for the vapor phase.
 Fortunately, this burden is eased by the typically low-pressure conditions of vaporization, where thermodynamic models can neglect the complications introduced by compression---with the notable exception of supercritical vapors in high-energy giant impacts.
-The MELTS model (@Ghiorso1985 *TK*), for instance, provides an accurate description of igneous geologic systems in this low-pressure regime, and is thus well-suited to the task.
-Calculating the composition, speciation, and abundance of the gas phase likewise requires an extensive and detailed thermodynamic database of vapor species, conveniently provided by standard thermodynamic tables like JANAF or the work of @Lamoreaux??? *TK*.
-As most vaporization processes are confined to the low-pressure regime, we can likewise rely on simple empirical thermal gas models (developed at 1 bar) that use the ideal gas approximation to extend to arbitrarily low partial pressures.
+The MELTS model [@Ghiorso1995], for instance, provides an accurate description of igneous geologic systems in this low-pressure regime, and is thus well-suited to the task.
+Calculating the composition, speciation, and abundance of the gas phase likewise requires an extensive and detailed thermodynamic database of vapor species, conveniently provided by standard thermodynamic tables, e.g. NIST-JANAF or similar tables [@Lamoreaux1984;@Lamoreaux1987].
+As most vaporization processes occur at low-pressure conditions, we can likewise rely on simple empirical thermal gas models (developed at 1 bar) that use the ideal gas approximation to extend to arbitrarily low partial pressures.
 This database of phase models is finally used with an appropriate equilibrium-seeking algorithm---depending on the vapor abundance regime---to predict the equilibrium phase assemblage by minimizing the total Gibbs energy of the system.
 
 
 ##  Vapor equilibrium modeling regimes
 <!-- # [[202101051402]] Vapor equilibrium modeling regimes -->
 
-Determining the equilibrium phase assemblage requires an efficient search of composition/abundance space for all possible phases in the system, ensuring the that final predicted assemblage corresponds to the global minimum Gibbs energy.
-The ideal approach to this task depends on the vapor abundance regime of the system.
-The two endmember regimes are vapor-limited [[202101060632]] and vapor-dominated [[*TK*]], where the bulk elemental composition of the system is assumed to be housed entirely in either the condensed phases or the mixed vapor phase, respectively.
-In either endmember, we make the approximation that low-abundance phases constitute an insignificant fraction of the system by mass.
+To find the equilibrium assemblage requires an exhaustive search of composition/abundance space for the global minimum Gibbs energy, where the optimal strategy depends on the relative abundance of vapor in the system.
+In the two endmember regimes, vapor-limited and vapor-dominated, the bulk composition of the system is housed nearly exclusively in the condensed phases or the mixed vapor phase, respectively, with negligible mass residing in low-abundance phases.
 This simplifies computation, since equilibrium is established independently by either the condensed phases or mixed vapor alone.
-These dominant phases thus determine the equilibrium conditions, setting the chemical potentials of the system which thereby dictate the properties of the minor coexisting phases.
-More complicated is the intermediate vapor-abundant case, in which both vapor and condensed phases coexist in significant quantities.
-Finding equilibrium in this case requires simultaneous energy minimization of all available condensed phases and vapor species, including abundances and compositions for every potential phase in the system.
+These dominant phases thus determine the equilibrium conditions, setting the chemical potentials of the system that control the properties of coexisting minor phases.
+Far more complex is the intermediate vapor-abundant case, in which both vapor and condensed phases coexist in significant quantities.
+Finding equilibrium in this case requires simultaneous energy minimization of all available condensed phases and vapor species.
 
 ##  Vapor-limited equilibrium modeling
 <!-- # [[202101060632]] Vapor-limited equilibrium modeling -->
@@ -71,7 +69,7 @@ We can thus model these systems in two steps, first considering only condensed p
 This approach allows us to use existing thermodynamic models (like the equilibration algorithm embedded in MELTS) to establish condensed-phase equilibrium, after which we can then determine the coexisting abundances of vapor species.
 The task is even further simplified at higher temperatures where the condensed phase is fully molten.
 In this case, condensed-phase equilibrium is trivial, since the composition and abundance of liquid are just equal to the bulk composition and total mass of the system.
-In the vapor-limited regime, the conditions of equilibrium are controlled by the condensed phase assemblage, which sets the chemical potentials for the system [[202011231519]].
+In the vapor-limited regime, the conditions of equilibrium are controlled by the condensed phase assemblage, which sets the chemical potentials for the system. <!-- [[202011231519]] -->
 Vapor species abundances are finally determined directly from these chemical potentials, providing a complete picture of all the stable phases in the system.
 
 ## Vapor species thermodynamics
