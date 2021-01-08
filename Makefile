@@ -1,4 +1,4 @@
-
+BIB_FILE=refs.bib
 posts_md = $(wildcard posts/*.md)
 posts_html = $(patsubst posts/%.md,docs/%.html,$(posts_md))
 
@@ -57,11 +57,11 @@ docs/writing-tracker.html : posts/writing-tracker.md $(templates) $(images)
 
 # all posts use custom post.html pandoc template
 docs/%.html : posts/%.md $(templates) $(images)
-	pandoc --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
+	pandoc --citeproc --bibliography=$(BIB_FILE) --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
 
 # all posts use custom post.html pandoc template
-docs/drafts/%.html : posts/drafts%.md $(templates) $(images)
-	pandoc --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
+docs/drafts/%.html : posts/drafts/%.md $(templates) $(images)
+	pandoc --citeproc --bibliography=$(BIB_FILE) --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html  --mathjax -o $@ -s $<
 
 docs/drafts/index.html : posts/drafts/index.md $(templates) $(images)
 	pandoc --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
