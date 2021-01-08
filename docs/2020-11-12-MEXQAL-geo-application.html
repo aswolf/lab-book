@@ -17,6 +17,25 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
       <link rel="stylesheet" href="templates/main.css" />
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -245,10 +264,15 @@
     <h2 id="exchange-equilibrium-using-dependent-species-w-mexqal">Exchange equilibrium using dependent species w/ MEXQAL</h2>
     <!-- [[202011111445]] Exchange equilibrium using dependent species w/ MEXQAL -->
     <p>One of the critical nuances not fully appreciated previously is that the MEXQAL method requires that all calculations be performed in dependent species space. This arises because the equilibrium affinity condition applies an ideal mixing correction to the saturation affinity to best match the estimated chemical potential offsets <span class="math inline">\(\phi_i\)</span>. The entropic mixing term has the familiar form of <span class="math inline">\(RTm \log X_i\)</span>, and thus implicitly assumes that the components are all positive and bounded between 0 and 1. No complications ever arise from this assumption for simple solutions, like the MELTS liquid phase or the Feldspars, because their solution endmembers are independent and fully span the physically realizable composition space.</p>
-    <p>More complex solutions involving multi-site coupled-substitution, however, like for the clinopyroxenes or spinels, require the ability to describe compositions involving negative amounts of some components. These negative quantities are necessary to represent all possible dependent species for the solution phase. A simple and straightforward fix for this problem is to simply transpose it into the larger dependent species space, rather than the original independent endmember component space. The full set of dependent species for any solution phase has the important property that any physically meaningful composition can be represented as a positive combination of the dependent species, reflecting the fact that they fully span the relevant composition space. By making this change, we guarantee that the fractions of each dependent species are always positive and we can make use of all of the same mathematical architecture developed for simpler solutions. This strategy for handling complex reciprocal solution phases is likewise discussed in the original <span class="citation" data-cites="Ghiorso2013">@Ghiorso2013</span> paper, and we follow the same procedure outlined there.</p>
+    <p>More complex solutions involving multi-site coupled-substitution, however, like for the clinopyroxenes or spinels, require the ability to describe compositions involving negative amounts of some components. These negative quantities are necessary to represent all possible dependent species for the solution phase. A simple and straightforward fix for this problem is to simply transpose it into the larger dependent species space, rather than the original independent endmember component space. The full set of dependent species for any solution phase has the important property that any physically meaningful composition can be represented as a positive combination of the dependent species, reflecting the fact that they fully span the relevant composition space. By making this change, we guarantee that the fractions of each dependent species are always positive and we can make use of all of the same mathematical architecture developed for simpler solutions. This strategy for handling complex reciprocal solution phases is likewise discussed in the original <span class="citation" data-cites="Ghiorso2013">Ghiorso (2013)</span> paper, and we follow the same procedure outlined there.</p>
     <h2 id="accuracy-benchmark-testing-on-igneous-phases">Accuracy Benchmark testing on Igneous phases</h2>
     <p>Using the phase compositions given in the table above, we are then prepared to test out the efficacy of the MEXQAL method for this set of solution models of varying complexity. Tests are performed using these compositions by directly calculating the true chemical potentials for each phase, evaluated at this representative equilibrium state. For complex phases with multi-site substitution, these phase compositions and corresponding chemical potentials are converted into the larger degenerate space of species mol fractions. Though this description is redundant, as discussed above, it is critical to MEXQAL approach, enabling the representation of an ideal mixing contribution. The MEXQAL method is then applied to these chemical potentials to invert for a nominally unknown composition. Convergence is assessed by comparing the inferred composition with the true input values, as well as verifying that the estimated phase affinity falls close to zero as expected for phases in the equilibrium assemblage.</p>
     <p>Using this approach for all four of the phases described above, we find excellent recovery of the known correct phase composition using the MEXQAL algorithm. It is important to note that translation into dependent species space is critical to the success of these tests, and progress is impossible without that step. For 3 of the 4 phases explored, the algorithm converges on a composition with a corresponding affinity of less that .001 J, fully consistent with being a member of the equilibrium assemblage. Notably, this includes the most complex phase of the set, spinel; even with four ordering parameters, MEXQAL was able to retrieve the correct composition to better than 2 parts in 10^4 for all components. The only phase to show some minor difficulties is clinopyroxene, which converged with an affinity excess of ~10 J, and an error in composition at the 1% level for the buffonite endmember. This level of convergence is passable for many applications, but likely results merely from a need to use multiple initial guesses for the MEXQAL method (starting from each dependent species). We will explore this curiosity and how to remedy it in future reports.</p>
+    <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+    <div id="ref-Ghiorso2013" class="csl-entry" role="doc-biblioentry">
+    Ghiorso, Mark S. 2013. <span>“<span>A</span> Globally Convergent Saturation State Algorithm Applicable to Thermodynamic Systems with a Stable or Metastable Omni-Component Phase.”</span> <em>Geochimica Et Cosmochimica Acta</em> 103 (February): 295–300. <a href="http://www.sciencedirect.com/science/article/pii/S0016703712006667">http://www.sciencedirect.com/science/article/pii/S0016703712006667</a>.
+    </div>
+    </div>
   </article>
 
   <!-- future-work here -->
