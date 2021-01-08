@@ -13,16 +13,16 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(12/31/2020)*
+## Latest Posting *(01/08/2021)*
+* [**Theory of Vaporized Rocks**](2021-01-08-vapor-rock-theory.html)
 
-* [**New open lab notebook prototype**](2020-12-31-new-lab-book.html)
-
-## Next Posting *(Due: 01/08/2021)*
-* **Theory of Vaporized Rocks**
+## Next Posting *(Due: 01/15/2021)*
+* **TBD**
 
 </div>
 
 ## Past Entries
+* [*2021-01-08:* **Theory of Vaporized Rocks**](2021-01-08-vapor-rock-theory.html)
 * [*2020-12-31:* **New open lab notebook prototype**](2020-12-31-new-lab-book.html)
 * [*2020-12-18:* **Urgently seeking equilibrium Working Draft (Paper I)**](2020-12-18-equilibrium-paper-draft.html)
 * [*2020-12-11:* **Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms**](2020-12-11-equilibrium-paper-outlines.html)

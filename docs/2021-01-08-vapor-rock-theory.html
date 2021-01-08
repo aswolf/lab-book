@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-01-08" />
+    
+  <title>Thermodynamics of Vaporized Rock</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Thermodynamics of Vaporized Rock</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-01-08) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>  </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href=".html">
+        </a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> <p>Silicate vapors receive little attention in many geoscience contexts, but these outgassed vapors play key roles in planetary evolution spanning the full range of planetary length- and time-scales, from the earliest proto-dust grains to the eventual erosion and erasure of entire rocky planets. Thermodynamic equilibrium ensures that rocky silicate vapors are always present above condensed (liquid or solid) phases, though typically at very low pressures. In most situations, these vapors are (rightly) ignored when other external processes dominate, such as the biotically controlled surface conditions on Earth.</p>
+But outgassed vapors are critical in key high-temperature stages of planetary evolution, which appear throughout the planet’s lifetime. Before planets or rocks even exist, vapors condense from the stellar nebula to form the original planetary building blocks. In later stages of planet formation, giant impacts are likely ubiquitous and readily produce global-scale melting and vaporization. Immediately following planetary accretion, rocky planets are dominated by deep magma oceans (especially after giant impacts) that exchange both volatile and refractory elements with silicate vapor and steam atmospheres. During the prolonged secular evolution of the planet, volcanic outgassing controls the long-term exchange of matter (primarily volatile and moderately volatile elements) between interiors and atmospheres. And finally, the terminal stage of rocky planet evolution, reserved for those parked too close to the surface of their parent star, involves progressive vaporization and whole-scale erosion by atmospheric escape, afflicting victims of both planetary migration and runaway stellar expansion in the red-giant phase. Solving the puzzles of planetary evolution thus depends critically on our ability to model silicate vapors and their interplay with liquid and solid phases through condensation and vaporization processes. </em> </b>
+    </div>
+  
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+              <li> Thermodynamic modeling of vaporized silicates requires accurate databases of both condensed (liquid &amp; solid) phases as well as all possible vapor species. </li>
+              <li> In vapor-limited regime, condensed phases dominate mass of system controlling equilibrium chemical potentials, allowing vapor species to be calculated as 2nd-order correction. </li>
+              <li> Partial pressures for each vapor species are calculated independently (reflecting ideal behavior), assuming equilibrium reaction with condensed phases. </li>
+          </ul>
+  </div>
+
+  <!-- key-points here -->
+
+  <article class="post-content">
+    <!-- content -->
+    <!-- Motivation -->
+    <!-- # [[202101030642]] Role of vaporized rock throughout planetary evolution -->
+    <h2 id="modeling-vaporized-silicates-overview">Modeling vaporized silicates overview</h2>
+    <!-- # [[202101050640]] Modeling vaporized silicates overview -->
+    <p>To quantitatively study rock vaporization processes, we must have a complete set of accurate thermodynamic models for both condensed and vapor phases sampling broad ranges in composition and temperature. It is critical that these solution models faithfully represent geologically realistic mixed compositions, including minor components which play key roles in vaporization due to their high volatilities, reflecting strong preferences for the vapor phase. Fortunately, this burden is eased by the typically low-pressure conditions of vaporization, where thermodynamic models can neglect the complications introduced by compression (with the notable exception of supercritical vapors in high-energy giant impacts). The MELTS model <span class="citation" data-cites="Ghiorso1995">(Ghiorso and Sack 1995)</span>, for instance, provides an accurate description of igneous geologic systems in this low-pressure regime, and is thus well-suited to the task. Calculating the composition, speciation, and abundance of the gas phase likewise requires an extensive and detailed thermodynamic database of vapor species, conveniently provided by standard thermodynamic tables, e.g. NIST-JANAF or similar tables <span class="citation" data-cites="Lamoreaux1984 Lamoreaux1987">(Lamoreaux and Hildenbrand 1984; Lamoreaux, Hildenbrand, and Brewer 1987)</span>. As most vaporization processes occur at low-pressure conditions, we can likewise rely on empirical thermal models of pure 1 bar gasses that use the ideal gas approximation to extend to arbitrarily low partial pressures and mixed compositions. This database of phase models is finally used with an appropriate equilibrium-seeking algorithm—depending on the vapor abundance regime—to predict the equilibrium phase assemblage by minimizing the total Gibbs energy of the system.</p>
+    <h2 id="vapor-abundance-regimes">Vapor-abundance regimes</h2>
+    <!-- # [[202101051402]] Vapor equilibrium modeling regimes -->
+    <p>Finding an equilibrium assemblage requires a comprehensive search of composition/abundance space for the global minimum Gibbs energy, where the optimal strategy depends on the relative total abundance of vapor in the system. In the two endmember regimes, vapor-limited and vapor-dominated, the bulk composition of the system is housed nearly exclusively in the condensed phases or the mixed vapor phase, respectively, with negligible mass residing in other low-abundance phases. This simplifies computation, since equilibrium is established independently by either the condensed phases or mixed vapor alone. These dominant phases thus determine the equilibrium conditions, setting the chemical potentials of the system that control the properties of coexisting minor phases. Far more complex is the intermediate vapor-abundant case, in which both vapor and condensed phases coexist in significant quantities. Finding equilibrium in this case requires simultaneous energy minimization of all available condensed phases and vapor species.</p>
+    <!-- # [[202101060632]] Vapor-limited equilibrium modeling -->
+    <p>The vapor-limited regime is the most common across a range of geoscience contexts, as it occurs at much lower temperatures and higher pressures, thus spanning a larger range of environmental conditions. A system is vapor-limited when the amount of vapor (by mass) is vastly outweighed by condensed phases. This ensures that the equilibrium state of the system is largely set by the condensed phases alone, allowing us to model these systems in two steps, first considering only condensed phases and then adding vapor species as a second-order correction. With this approach, we can use existing thermodynamic models (like the equilibration algorithm embedded in MELTS) to establish condensed-phase equilibrium, after which we can then determine the coexisting abundances of vapor species. The task is even further simplified at higher temperatures where the condensed phase is fully molten. In this case, condensed-phase equilibrium is trivial, since the composition and abundance of liquid are just equal to the bulk composition and total mass of the system. The conditions of equilibrium are therefore controlled by the condensed phase assemblage, dictating the chemical potentials of the system (<span class="math inline">\(\mu_j\)</span>). <!-- [[202011231519]] --> Vapor species abundances are finally determined directly from these chemical potentials, providing a complete picture of all the stable phases in the system.</p>
+    <h2 id="modeling-equilibrium-vapor-compositions">Modeling equilibrium vapor compositions</h2>
+    <!-- # [[202006110721]] Equilibrium Vapor Species Abundances above Condensed Phs -->
+    <!-- Equilibrium abundances of every vapor species above a condensed phase are readily calculated given a model of each pure species at 1 bar. -->
+    <p>In the vapor-limited regime, thermodynamics provides a straightforward framework for predicting vapor compositions, where the abundance of each vapor species is independently adjusted to equalize its chemical potential with the bulk system. Using mass-balance constraints, we write the balanced chemical reaction that forms the <span class="math inline">\(i^{th}\)</span> gaseous species from the condensed phase assemblage by exchange of basic system components (e.g. the oxides with additional oxygen consumed or produced as needed): <span class="math display">\[
+    \phi_{iv} = \sum_{j} \nu_{ij} c_j + \nu_{iO_2} c_{O_2}
+    \]</span> where <span class="math inline">\(\phi_{iv}\)</span> is the <span class="math inline">\(i^{th}\)</span> vapor species, <span class="math inline">\(c_j\)</span> &amp; <span class="math inline">\(c_{O_2}\)</span> are the vector of basic system components (like oxides) plus oxygen, and <span class="math inline">\(\nu_{ij}\)</span> &amp; <span class="math inline">\(\nu_{iO_2}\)</span> give the stoichiometry of the vapor species in question, expressing its composition in terms of system components. With the law of mass action, the corresponding equilibrium condition is written: <span class="math display">\[
+    \begin{aligned}
+    \mu_{iv} &amp;= \sum_{j} \nu_{ij} \mu_j + \nu_{iO_2} \mu_{O_2}\\
+    \mu^0_{iv} + RT\log P_{iv} &amp;= \sum_{j} \nu_{ij} \mu_j + \nu_{iO_2} \cdot ( \mu_{O_2}^0 + RT\log f_{O_2})
+    \end{aligned}
+    \]</span> where <span class="math inline">\(P_{iv}\)</span> is the equilibrium partial pressure of vapor species <span class="math inline">\(i\)</span>, <span class="math inline">\(f_{O_2}\)</span> is the oxygen fugacity, and <span class="math inline">\(\mu_{iv}\)</span>, <span class="math inline">\(\mu_j\)</span>, &amp; <span class="math inline">\(\mu_{O_2}\)</span> are the chemical potentials of vapor species <span class="math inline">\(i\)</span>, component <span class="math inline">\(j\)</span>, &amp; molecular oxygen, respectively. This expression of equilibrium imposes equality of chemical potentials for gas species <span class="math inline">\(i\)</span> in terms of system components that are freely exchanged with coexisting liquid or solid phases. The above formulation uses chemical potentials directly, but is equivalent to the activity-focused formulation of <span class="citation" data-cites="Sossi2018">Sossi and Fegley Jr (2018)</span>. Rearranging, we obtain the governing equation for the abundances of each vapor species in terms of its partial pressure: <span class="math display">\[
+    \log P_{iv} = \frac{1}{RT} \left[ \sum_{j} \nu_{ij} \mu_j + \nu_{i O_2}\mu_{O_2}^0 - \mu_{iv}^0 \right] + \nu_{iO_2} \log f_{O_2}
+    \]</span> <!-- {#eq:vapor-abundances} --> The equilibrium abundance of each vapor species is thus determined by environmental conditions (temperature and oxygen fugacity), the condensed phase assemblage (that dictates the chemical potentials of the system), and the 1 bar thermal properties of each vapor species (<span class="math inline">\(\mu_{iv}^0\)</span> &amp; <span class="math inline">\(\mu^0_{O_2}\)</span>). <!-- **[NOTE-ASW: need to mention calculation of muj using melts]** --></p>
+    <h2 id="leveraging-ideal-behavior-of-vapor-species">Leveraging ideal behavior of vapor species</h2>
+    <!-- # [[202006090637]] Overview of modeling vapor species thermodynamics -->
+    <!-- **[NOTE-ASW: label eqns using fignos or change this ref]** -->
+    <p>Calculation of species abundances using the governing expression above, rests upon the simplified behavior of ideal gases in the low density limit, where species in a mixed vapor do not interact with one another. The ideal gas approximation imposes a simple link between pressure and temperature effects through the ideal gas law, enabling experimental constraints at a 1 bar reference pressure to trivially extend to arbitrarily low-density pressure conditions. For this application, the primary benefit of the ideal gas approximation is the absence of compositional mixing terms, ensuring that the fugacity of any gaseous species is simply equal to its partial pressure, <span class="math inline">\(f_{i}^v=P_i^v\)</span>, enabling the abundance of each vapor species to be determined independently of all others.</p>
+    <p>To evaluate the chemical potential of each vapor species, the ideal gas approximation must be coupled with an analytic expression for energy as a function of temperature, like the Shomate equation used by the thermochemical tables of JANAF and <span class="citation" data-cites="Lamoreaux1984">Lamoreaux and Hildenbrand (1984)</span>. <!-- ## Shomate Equation --> <!-- # [[202006090659]] Shomate Equation --> <!-- The Shomate equation provides an analytic empirical description of the chemical potential of a phase as a function of temperature evaluated at a (1 bar) reference pressure. --> The Shomate equation empirically captures energy variations for a wide selection of materials over a broad temperature range, and multiple piecewise models are sometimes combined to retain desired accuracy over 1000+ degree intervals. The generalized polynomial form of the Shomate equation describes molar enthalpy in kJ/mol: <span class="math display">\[
+    \Delta \bar{H}^0 = \bar{H}^0 - \bar{H}^0_{298.15} = At + \frac{B}{2} t^2 + \frac{C}{3} t^3
+    + \frac{D}{4} t^4 - E t^{-1} + F
+    \]</span> molar entropy in J/mol/K: <span class="math display">\[
+    \bar{S}^0 = A\ln{t} + Bt + \frac{C}{2} t^2 + \frac{D}{3} t^3 - \frac{E}{2} t^{-2} + G
+    \]</span> and molar heat capacity in J/mol/K: <span class="math display">\[
+    C^0_P = A + Bt + C t^2 + D t^3 + E t^{-2}
+    \]</span> where <span class="math inline">\(t\)</span> is temperature given in kilo-Kelvin (<span class="math inline">\(t = T/1000\)</span>). These are combined to evaluate the molar Gibbs energy (or chemical potential): <span class="math display">\[
+    \bar{G}^0 \equiv \mu^0 = \Delta \bar{H}^0 - T \bar{S}^0
+    \]</span> These numerical coefficients (<span class="math inline">\(A,B,C,D,E,F,G\)</span>) are provided for a huge set of phases in the JANAF thermochemical database, as well as the tables of <span class="citation" data-cites="Lamoreaux1984">Lamoreaux and Hildenbrand (1984)</span> and <span class="citation" data-cites="Lamoreaux1987">Lamoreaux, Hildenbrand, and Brewer (1987)</span>. Using these expressions, we can rapidly evaluate the chemical potential reference state for every vapor species in the system, allowing us to determine the equilibrium partial pressure of each one. <!-- **[NOTE-ASW: reference governing eqn above once eqnos pkg working]** --></p>
+    <h1 class="unnumbered" id="references">References</h1>
+    <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+    <div id="ref-Ghiorso1995" class="csl-entry" role="doc-biblioentry">
+    Ghiorso, Mark S, and Richard O Sack. 1995. <span>“<span>C</span>hemical Mass Transfer in Magmatic Processes <span>IV</span>. <span>A</span> Revised and Internally Consistent Thermodynamic Model for the Interpolation and Extrapolation of Liquid-Solid Equilibria in Magmatic Systems at Elevated Temperatures and Pressures.”</span> <em>Contributions to Mineralogy and Petrology</em> 119 (2-3): 197–212.
+    </div>
+    <div id="ref-Lamoreaux1984" class="csl-entry" role="doc-biblioentry">
+    Lamoreaux, R. H., and D. L. Hildenbrand. 1984. <span>“High Temperature Vaporization Behavior of Oxides. I. Alkali Metal Binary Oxides.”</span> <em>Journal of Physical and Chemical Reference Data</em> 13 (1): 151–73. <a href="https://doi.org/10.1063/1.555706">https://doi.org/10.1063/1.555706</a>.
+    </div>
+    <div id="ref-Lamoreaux1987" class="csl-entry" role="doc-biblioentry">
+    Lamoreaux, R. H., D. L. Hildenbrand, and L. Brewer. 1987. <span>“High‐temperature Vaporization Behavior of Oxides II. Oxides of Be, Mg, Ca, Sr, Ba, b, Al, Ga, in, Tl, Si, Ge, Sn, Pb, Zn, Cd, and Hg.”</span> <em>Journal of Physical and Chemical Reference Data</em> 16 (3): 419–43. <a href="https://doi.org/10.1063/1.555799">https://doi.org/10.1063/1.555799</a>.
+    </div>
+    <div id="ref-Sossi2018" class="csl-entry" role="doc-biblioentry">
+    Sossi, Paolo A, and Bruce Fegley Jr. 2018. <span>“Thermodynamics of Element Volatility and Its Application to Planetary Processes.”</span> <em>Reviews in Mineralogy and Geochemistry</em> 84 (1): 393–459.
+    </div>
+    </div>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> In future weeks, we will present a description of our Python open-source software, <a href="https://gitlab.com/ENKI-portal/vaporock">VapoRock</a>, (currently in the working prototype stage) that was created based on this theoretical framework. Using a standard set of major and minor elements for geological systems, we will predict coexisting equilibrium vapor atmospheres corresponding to typical planetary compositions. These results will also be compared with those published for the primary existing closed-source modeling tool, MAGMA. This post thus represents the first in a series focused on silicate vaporization modeling that will form the core of a manuscript showcasing the new VapoRock software. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>
