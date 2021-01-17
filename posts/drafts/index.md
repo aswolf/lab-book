@@ -5,7 +5,7 @@ active: index
 ---
 
 ## Draft Docs
-* [*2020-01-04:* **Theory & Modeling of Vaporized Rock**](vapor-rock-theory.html)
+* [*2021-01-10:* **VapoRock Manual**](VapoRock-manual.html)
 
 ## Post Ideas
 * Magma Chamber Sim Monte Carlo Fitness
