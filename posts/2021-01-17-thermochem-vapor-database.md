@@ -8,8 +8,8 @@ prev:
   post: 2021-01-08-vapor-rock-theory
   title: 'Thermodynamics of Vaporized Rock'
 next:
-  post:
-  title:
+  post: 2021-01-25-vaporock-validation-challenges
+  title: 'Challenges with experimental validation of vaporization modeling'
 motivation:
   Having demonstrated the strong scientific motivation for better understanding silicate vaporization processes, we propose to develop a new code VapoRock, which combines the MELTS liquid model (as implemented by the ThermoEngine code) with gas-species properties from the thermochemistry tables of NIST-JANAF and @Lamoreaux1984 & @Lamoreaux1987, enabling coexisting vapor speciation calculations similar to those provided by the MAGMA code. VapoRock is fully capable of determining gaseous species abundances in contact with a magma, represented using the MELTS liquid model. MELTS has been rigorously tested and validated by the petrology community over the last 25 years. Currently, the closed-source tool MAGMA is the only one available that is capable of predicting gas abundances in equilibrium with a magma ocean. Thus a major benefit of our project will be the extension of the open-source ThermoEngine code to treat magma-vapor systems as a new tool for the community.
 future-work:

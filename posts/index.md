@@ -13,15 +13,16 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(01/17/2021)*
-* [**Thermochemical Rock Vaporization Database**](2021-01-17-thermochem-vapor-database.html)
+## Latest Posting *(01/25/2021)*
+* [**Challenges with experimental validation of vaporization modeling**](2021-01-25-vaporock-validation-challenges.html)
 
-## Next Posting *(Due: 01/21/2021)*
+## Next Posting *(Due: 01/29/2021)*
 * **TBD**
 
 </div>
 
 ## Past Entries
+* [*2021-01-25:* **Challenges with experimental validation of vaporization modeling**](2021-01-25-vaporock-validation-challenges.html)
 * [*2021-01-17:* **Thermochemical Rock Vaporization Database**](2021-01-17-thermochem-vapor-database.html)
 * [*2021-01-08:* **Theory of Vaporized Rocks**](2021-01-08-vapor-rock-theory.html)
 * [*2020-12-31:* **New open lab notebook prototype**](2020-12-31-new-lab-book.html)

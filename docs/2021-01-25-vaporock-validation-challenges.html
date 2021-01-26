@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-01-25" />
+    
+  <title>Challenges with experimental validation of vaporization modeling</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Challenges with experimental validation of vaporization modeling</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-01-25) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="2021-01-17-thermochem-vapor-database.html">
+        Thermochemical Database for vaporization/condensation</a>
+     </h4>
+
+    <h4>  </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> The 1970s saw a major scientific push to understand the lunar samples returned from the moon landing missions, spurring a host of experimental studies on lunar samples aimed at uncovering the geologic history of the lunar surface. In particular, it was immediately clear the that lunar surface is highly depleted in moderately volatile elements like Na and K relative to terrestrial rocks, likely pointing to a high-temperature past involving significant vaporization. As reviewed in <span class="citation" data-cites="Sossi2018">Sossi and Fegley Jr (2018)</span>, vaporization experiments were carried out on lunar samples by <span class="citation" data-cites="deMaria1969">DeMaria and Piacente (1969)</span>, <span class="citation" data-cites="deMaria1971">De Maria et al. (1971)</span>, <span class="citation" data-cites="Naughton1971">Naughton, Derby, and Lewis (1971)</span>, <span class="citation" data-cites="Gooding1976">Gooding and Muenow (1976)</span>, and <span class="citation" data-cites="Markova1986">Markova et al. (1986)</span>. These experimental efforts had both the aim of constraining the molecular abundances in the equilibrium vapor for lunar basalts and other terrestrial or meteorite samples, as well as understanding their chemical trajectory as they are modified by fractional vaporization. Obtaining not only qualitative results but quantitatively useful measurements from such experiments is extremely challenging, due to the difficulties of limiting or otherwise fully characterizing the confounding effects of fractional vaporization of the most volatile components of silicate rocks. </em> </b>
+    </div>
+  
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+              <li> Many lunar sample vaporization experiments were performed in 1970s to understand origin of Na/K-depleted lunar surface rocks; experimental constraints make many measurements difficult to use for model validation. </li>
+              <li> Lunar vaporization experiments attempt to shed light on both equilibrium and fractional vaporization—useful for model validation and understanding lunar evolution (respectively)—but typically lie somewhere between these endmembers. </li>
+              <li> High volatilities of Na and K allow sub-liquidus vaporization (in some cases to exhaustion of alkalis); quantitative analysis of such experiments is challenged by unconstrained phase assemblages &amp; strong kinetic effects. </li>
+              <li> Oxygen fugacity plays a critical role in determining silicate vapor abundances, but constraining its value during experiments and understanding its evolution in natural systems is extremely challenging. </li>
+          </ul>
+  </div>
+
+  <!-- key-points here -->
+
+  <article class="post-content">
+    <!-- content -->
+    <!-- Motivation section source: [[202101230542]] -->
+    <!-- ## [[202101230542]] Validating VapoRock w/ lunar vaporization experiments -->
+    <h2 id="equilibrium-vs-fractional-vaporization-of-lunar-samples">Equilibrium vs fractional vaporization of lunar samples</h2>
+    <!-- # [[202101230617]] Equilibrium vs fractional vaporization of lunar samples -->
+    <p>Interpreting the data produced in lunar vaporization experiments unfortunately poses significant issues stemming from sample heating procedures. Whether samples were measured at particular target temperatures or progressively heated, precise details of the heating schedule can greatly impact experimental results. From a model validation perspective, an ideal vaporization experiment would bring the sample immediately to a target temperature and heat it just long enough to obtain a precise measurement of the off-gassed vapors, after which a fresh sample would be brought to a new temperature. Additionally, the residual samples themselves should be analytically characterized to demonstrate minimal change in their bulk compositions, demonstrating that the measurements reflect the true equilibrium vapor at the known sample composition. Conversely, the experiments themselves were generally designed to explore the effects of fractional vaporization on the composition of the lunar surface, motivating the use of continuous heating procedures. Thus these two opposing experimental designs both provide value for understanding the geological history of the lunar surface, but unsurprisingly the more challenging and less flashy attempts at near-equilibrium vaporization are more difficult to find in the literature. Troublesome kinetic factors can also dramatically influence vapor abundances and outgassing rates. While vaporization processes can in some cases approach near-equilibrium conditions for planetary-scale reservoirs of material, laboratory setups are constrained by small sample sizes and finite experimental runtimes which both tend to amplify the role of kinetic effects.</p>
+    <h2 id="sub-liquidus-vaporiziation-and-volatile-loss">Sub-liquidus vaporiziation and volatile loss</h2>
+    <!-- # [[202101240624]] Sub-liquidus vaporiziation and volatile loss -->
+    <p>Much of the focus for vaporization processes is given (at least initially) to the most volatile oxide species (Na and K), as they comprise the bulk of the vapor and are thus most easily lost from the system. The volatilities of Na and K are so much higher than all other major oxides, that they attain partial pressures generally many orders of magnitude higher than all other species, even though they represent important but relatively minor components of most silicate rocks. Accurately modeling their vaporization pathway is thus a key area of focus, and yet careful validation of models predicting their vaporization is hindered by their eagerness to escape. Not only do they pose major issues around equilibrium vs fractional vaporization, but they are prone to near-complete vaporization before the sample has a chance to fully melt (below the sample’s liquidus temperature). Sub-liquidus vaporization raises serious challenges to data interpretation, since the molten component of the sample is generally poorly characterized in terms of mass fraction and composition (which can differ strongly from the sample’s bulk composition depending on degree of melting). Straightforward vaporization modeling typically relies on a fully molten condensed phase (e.g. using either MAGMA or VapoRock codes), without the ability to properly address partially melted samples. Even if the model does incorporate solid phases with appropriate (more sophisticated) methods of mixed-phase equilibrium, there are serious unavoidable issues surrounding kinetic effects. Experiments involving simultaneous coexistence of vapors, liquids, and solids, are very likely to be influenced by kinetics, since the partial vaporization of material from the solid phases involves much higher energetic barries than the liquid, and will thus proceed more slowly. Furthermore, only the surface of each solid grain is accessible for chemical interaction with the vapor phase, whereas the bulk of the liquid is reactive due to its ability to flow and homogenize. These constraints pose significant barriers to quantitatively analyzing Na and K vaporization loss in materials with significant sub-liquidus vaporization, including unfortunately typical lunar basalt samples <span class="citation" data-cites="Sossi2018">(see Sossi and Fegley Jr 2018 for review)</span>.</p>
+    <h2 id="constraining-oxygen-fugacity-conditions-during-vaporization">Constraining oxygen fugacity conditions during vaporization</h2>
+    <!-- # [[202101230622]] Constraining oxygen fugacity conditions during vaporization -->
+    <p>The oxygen fugacity conditions present during vaporization of rocky samples exert strong controls on vapor abundances, since oxygen appears as either a reactant or product in most liquid vaporization reactions (assuming oxides are used as system components). And yet, due to extremely low abundances in most situations, determining the true oxygen fugacity conditions in either experiments or natural systems poses immense challenges. Though some experiments do measure and report molecular (or atomic) oxygen abundances, these are only measurable over specific temperature intervals that do not cover the full range of the experiments and which shift depending on the composition of the sample (which itself can change due to fractional vaporization). Oxygen fugacity conditions can also be inferred from the relative abundances of coupled vapor species with variable oxidation states (like <span class="math inline">\(TiO_2\)</span> and <span class="math inline">\(TiO\)</span>) with the help of a thermochemical database of vapor species, though this calculation is rarely presented in most experimental studies. Beyond constraining experimental conditions based on empirical measurements, building a true understanding of the underlying factors that govern evolving oxygen abundances in natural systems poses even greater challenges. Much of the published modeling (work of Fegley and Schaefer, e.g. <span class="citation" data-cites="Fegley1987">Fegley Jr and Cameron (1987)</span>, <span class="citation" data-cites="Schaefer2004">Schaefer and Fegley Jr (2004)</span>) proceed as if the samples themselves posses unique intrinsic oxygen fugacities that are well constrained at different vaporization temperatures. But these models assume that the sample redox state dominates the oxygen budget in the vaporized portion of the system. Due to the low oxygen abundances in the vapor, any process that can fractionate oxygen by molecular processing or removal by escape or deposition should be able to dramatically alter the availability of oxygen. Even in cases where the sample redox state does dictate the oxygen fugacity, it is unclear whether published silicate liquid redox models (e.g. <span class="citation" data-cites="Kress1991">Kress and Carmichael (1991)</span>) are sufficiently accurate to accurately predict the evolving oxygen fugacity during isolated vaporization of these materials.</p>
+    <h1 class="unnumbered" id="references">References</h1>
+    <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+    <div id="ref-deMaria1971" class="csl-entry" role="doc-biblioentry">
+    De Maria, G, G Balducci, M Guido, and V Piacente. 1971. <span>“Mass Spectrometric Investigation of the Vaporization Process of Apollo 12 Lunar Samples”</span> 2: 1367.
+    </div>
+    <div id="ref-deMaria1969" class="csl-entry" role="doc-biblioentry">
+    DeMaria, G, and V Piacente. 1969. <span>“Mass Spectrometric Study of Rock Like Lunar Surface Material.”</span> <em>ATTI DELLA ACCADEMIA NAZIONALE DEI LINCEI RENDICONTI-CLASSE DI SCIENZE FISICHE-MATEMATICHE &amp; NATURALI</em> 47 (6): 525.
+    </div>
+    <div id="ref-Fegley1987" class="csl-entry" role="doc-biblioentry">
+    Fegley Jr, Bruce, and AGW Cameron. 1987. <span>“A Vaporization Model for Iron/Silicate Fractionation in the Mercury Protoplanet.”</span> <em>Earth and Planetary Science Letters</em> 82 (3-4): 207–22.
+    </div>
+    <div id="ref-Gooding1976" class="csl-entry" role="doc-biblioentry">
+    Gooding, James L., and David W. Muenow. 1976. <span>“Activated Release of Alkalis During the Vesiculation of Molten Basalts Under High Vacuum: Implications for Lunar Volcanism.”</span> <em>Geochimica Et Cosmochimica Acta</em> 40 (6): 675–86. <a href="http://www.sciencedirect.com/science/article/pii/0016703776901137">http://www.sciencedirect.com/science/article/pii/0016703776901137</a>.
+    </div>
+    <div id="ref-Kress1991" class="csl-entry" role="doc-biblioentry">
+    Kress, Victor C., and Ian S. E. Carmichael. 1991. <span>“The Compressibility of Silicate Liquids Containing Fe2O3 and the Effect of Composition, Temperature, Oxygen Fugacity and Pressure on Their Redox States.”</span> <em>Contributions to Mineralogy and Petrology</em> 108 (1): 82–92. <a href="https://doi.org/10.1007/BF00307328">https://doi.org/10.1007/BF00307328</a>.
+    </div>
+    <div id="ref-Markova1986" class="csl-entry" role="doc-biblioentry">
+    Markova, OM, OI Yakovlev, GA Semenov, and AN Belov. 1986. <span>“SOME GENERAL RESULTS OF EXPERIMENTS ON VAPORIZATION OF NATURAL MELTS IN THE KNUDSEN CELL.”</span> <em>Geokhimiya</em>, no. 11: 1559–69.
+    </div>
+    <div id="ref-Naughton1971" class="csl-entry" role="doc-biblioentry">
+    Naughton, JJ, JV Derby, and VA Lewis. 1971. <span>“Vaporization from Heated Lunar Samples and the Investigation of Lunar Erosion by Volatilized Alkalis”</span> 2: 449.
+    </div>
+    <div id="ref-Schaefer2004" class="csl-entry" role="doc-biblioentry">
+    Schaefer, Laura, and Bruce Fegley Jr. 2004. <span>“A Thermodynamic Model of High Temperature Lava Vaporization on Io.”</span> <em>Icarus</em> 169 (1): 216–41.
+    </div>
+    <div id="ref-Sossi2018" class="csl-entry" role="doc-biblioentry">
+    Sossi, Paolo A, and Bruce Fegley Jr. 2018. <span>“Thermodynamics of Element Volatility and Its Application to Planetary Processes.”</span> <em>Reviews in Mineralogy and Geochemistry</em> 84 (1): 393–459.
+    </div>
+    </div>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> In a future post, we will explore these validation issues quantitatively, focusing in on a number of previous experimental studies as well as published computational predictions from the MAGMA code. These comparisons will enable us to better understand the comparative accuracy of the VapoRock code and build confidence in its predictions. In light of the issues raised here surrounding issues with attaining a well-defined thermodynamic equilibrium state, special care will be taken in selecting the experimental data used for comparison. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>
