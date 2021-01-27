@@ -5,7 +5,7 @@ active: index
 ---
 
 ## Draft Docs
-* [*2021-01-25:* **VapoRock Validation Discussion**](VapoRock-validation-challenges.html)
+* [*2021-01-29:* **VapoRock Demo & Quantitative Validation**](VapoRock-demo-benchmark.html)
 
 ## Post Ideas
 * Magma Chamber Sim Monte Carlo Fitness

@@ -139,3 +139,13 @@ width="100%" height="1000"  */
 .textright {text-align:right;}
 .important {color:#f02025; background-color:inherit; font-weight:bold;}
 .box {margin-bottom:20px; padding:10px; border:1px solid #636a46; background-color:#E1E3D4; color:#444; line-height:1.5em;}
+
+
+figure {
+  margin-block-end: 2em;
+  /* margin-inline-end: 400px; */
+}
+
+figcaption span{
+  font-weight: bold;
+}
