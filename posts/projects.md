@@ -13,6 +13,8 @@ active: projects
 * [*2020-11-05:* **Calculating phase composition with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)**](2020-11-05-MEXQAL.html)
 
 ## Planetary Vapor Modeling
+* [*2021-01-25:* **Challenges with experimental validation of vaporization modeling**](2021-01-25-vaporock-validation-challenges.html)
+* [*2021-01-17:* **Thermochemical Rock Vaporization Database**](2021-01-17-thermochem-vapor-database.html)
 * [*2021-01-08:* **Theory of Vaporized Rocks**](2021-01-08-vapor-rock-theory.html)
 
 ## Academic Writing
