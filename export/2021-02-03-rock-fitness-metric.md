@@ -1,26 +1,6 @@
 ---
-layout: post
 title: Quantitative modeling of rock formation histories
-active: lab-book
 author: Aaron S. Wolf
-date: 2021-02-03
-next:
-  post:
-  title:
-motivation:
-  One of the key challenges associated with analyzing the rock record is that samples taken from a petrologic sequence are known to have some genetic origin, but the nature and timing of that evolutionary link are only revealed through the modeling process.
-  The usual assumptions made to enable modeling are that the fine-grained matrix of these samples represents the liquid composition in the magma chamber, while the phenocrysts represent saturated phases crystalizing from their parent liquid; the entire package is then erupted and delivered to the surface where they are added to the rock record.
-  This straightforward interpretation can be complicated by the presence of xenocrysts (perhaps entrained from an earlier epoch of crystallization), but fortunately these xenocrysts usually stand out as clear outliers on the basis of texture and composition, allowing them to be identified and screened from the analysis (or otherwise incorporated into more complex models including partial disequilibrium).
-  For typical cases, initial 'modeling' efforts can be fairly informal, taking the form of graphical analysis of compositional trends that can suggest some standard igneous process like fractional crystallization, assimilation, or magma mixing.
-  But at this point, such assessments largely represent educated guesses which must be tested with quantitative modeling if further progress is to be made.
-  The initial stages of such modeling often proceed using a *'chi-by-eye'* approach (where chi-square, $\chi^2$, is a typical symbol used for the goodness-of-fit metric).
-  Though these analyses can provide results that are quite compelling, this process should be viewed as only the initial exploratory phase of a more in depth statistical analysis, providing early support for one or more working hypotheses, rather than a offering up finalized evidence.
-  Having a quantitative metric to evaluate the quality of a modeling result is thus a critical obstacle to evaluating and comparing different competing formation hypotheses for a particular suite of rock samples. # [[202101310621]]
-future-work:
-  In a future post, we will explore the philosophical implications and potential consequences of assigning errors to the data in this newly proposed rock-fitting metric.
-  Such statistical concerns highlight a general phenomenon associated with model-building---arising whenever a model cannot simultaneously capture every aspect of the dataset---in which the model calibration is pulled simultaneously toward multiple plausible solutions.
-  This is especially common when calibrating against multiple data types or more broadly when the data can be split into groups, each of which is largely sensitive to a different subset of the model parameters.
-  In science, imperfect models are the norm rather than the exception, and therefore our particular example of geologic modeling will serve as a concrete illustration of a general challenge common to nearly all data-based model-building exercises.
 key-points:
   - A general rock mineralogy fitness metric is proposed that captures the quality of a modeled mineral assemblage for an analyzed rock sample.
   - Fitness metric accounts for bulk-rock composition, phase assemblage, modal abundances, phase composition, and trace/isotopic trends.
@@ -28,6 +8,16 @@ key-points:
   - Model fitness for an entire suite of rock samples is determined by identifying corresponding point in simulation to each rock sample (using Hausdorff distance optimization).
 ---
 
+##  Inferring formation histories from rock sample suites
+<!-- # [[202101260640]] *Fitness metric for modeling rock mineral assemblages* -->
+One of the key challenges associated with analyzing the rock record is that samples taken from a petrologic sequence are known to have some genetic origin, but the nature and timing of that evolutionary link are only revealed through the modeling process.
+The usual assumptions made to enable modeling are that the fine-grained matrix of these samples represents the liquid composition in the magma chamber, while the phenocrysts represent saturated phases crystalizing from their parent liquid; the entire package is then erupted and delivered to the surface where they are added to the rock record.
+This straightforward interpretation can be complicated by the presence of xenocrysts (perhaps entrained from an earlier epoch of crystallization), but fortunately these xenocrysts usually stand out as clear outliers on the basis of texture and composition, allowing them to be identified and screened from the analysis (or otherwise incorporated into more complex models including partial disequilibrium).
+For typical cases, initial 'modeling' efforts can be fairly informal, taking the form of graphical analysis of compositional trends that can suggest some standard igneous process like fractional crystallization, assimilation, or magma mixing.
+But at this point, such assessments largely represent educated guesses which must be tested with quantitative modeling if further progress is to be made.
+The initial stages of such modeling often proceed using a *'chi-by-eye'* approach (where chi-square, $\chi^2$, is a typical symbol used for the goodness-of-fit metric).
+Though these analyses can provide results that are quite compelling, this process should be viewed as only the initial exploratory phase of a more in depth statistical analysis, providing early support for one or more working hypotheses, rather than a offering up finalized evidence.
+Having a quantitative metric to evaluate the quality of a modeling result is thus a critical obstacle to evaluating and comparing different competing formation hypotheses for a particular suite of rock samples. # [[202101310621]]
 <!-- Outline Note index stored in [[202101260640]] *Fitness metric for modeling rock mineral assemblages* -->
 <!-- # [[202101260640]] *Fitness metric for modeling rock mineral assemblages* -->
 
@@ -68,29 +58,26 @@ We quantify the contribution of each of these fitness terms in the following Tab
 
 where $\hat{X}_i^{sys}$ and $\hat{X}^\phi_j$ are the compositional vectors for the system and phase $\phi$, $f_\phi$ and $\mathcal{A}_\phi$ are the phase fraction and saturation affinities for phase $\phi$, and $y_\epsilon$ are the chemical abundances for passive tracer $\epsilon$.
 Most terms depend on the difference ($\Delta$) between the measured and model values, except for the saturation affinity which inherently reflects an energetic deviation from equilibrium.
-The relative weightings of each of these data-types is controlled by the error weighting factors $\sigma$ present in every fitness term.
-<!--[[202102011633]]-->
+The relative weightings of each of these data-types is controlled by the error weighting factors $\sigma$ present in every fitness term [[202102011633]].
 We have identified five major contributions to this fitness, and outlined how they can be easily quantified using a petrological formation model like the Magma Chamber Simulator.
 These comparisons range from broad summary data (like the whole rock composition) down to comprehensive detail-oriented data (like the compositions of each individual phase).
-At either end of this spectrum, we have direct comparison of predicted and measured compositions---of individual phases or the rock as a whole---which can use straightforward oxide wt. fractions or more sophisticated methods that account for natural variability generated by igneous processes.
-<!-- [[202102020605]] -->
+At either end of this spectrum, we have direct comparison of predicted and measured compositions---of individual phases or the rock as a whole---which can use straightforward oxide wt. fractions or more sophisticated methods that account for natural variability generated by igneous processes [[202102020605]].
 At an intermediate level of detail, we have comparisons of the phase assemblage (which minerals are present) and the modal mineral abundances (comparing phase fractions by weight or moles of oxides).
 This intermediate scale is critical, since it ensures that correct phases are actually present in the rock (or at least very nearly stable based on their saturation affinities) and in generally the right amounts.
 Taken together, these four terms encapsulate the major and minor components of the rock that largely control the phase equilibria as the rock is formed.
-Additional constraints can be imposed by trace element and isotopic data, which are distinct in that they represent passive tracers in the system and thus play no role in the phase equilibria that the determine the major mineralogy of the rock samples.
- <!-- [[202102021055]] -->
+Additional constraints can be imposed by trace element and isotopic data, which are distinct in that they represent passive tracers in the system and thus play no role in the phase equilibria that the determine the major mineralogy of the rock samples [[202102021055]].
 
 ## Passive tracers as records of formation pathway
 <!-- ## Fitness metric for passive chemical tracers -->
 <!-- # [[202102021055]] Fitness metric for passive chemical tracers -->
 
 Passive chemical tracers like stable or radiogenic isotopes and trace elements provide powerful constraints on path-dependent rock formation histories, since their preferential partitioning into either the liquid or solid mineral phases provides a record of the evolving mass balance between the liquid and fractionating crystals being lost from the system.
-<!-- The additional terms quantifying these passive tracers adopt a form similar to the phase composition constraints:
+The additional terms quantifying these passive tracers adopt a form similar to the phase composition constraints:
 $$
 \chi^2(\textrm{chem-tracers}) = \sum\limits_\epsilon^\textrm{tracers} \left(\Delta y_\epsilon / \sigma_{y_\epsilon}\right)^2
 $$
-where $y_\epsilon$ is the abundance of passive tracer $\epsilon$ to be modeled, $\Delta y_\epsilon$ is the difference in its measured value from the model results, and $\sigma_{y_\epsilon}$ is the model error term for that tracer. -->
-This basic approach should apply for a variety of tracers, from radiogenic isotopic ratios like $(^{87}Sr/^{86}Sr)$, to the abundance of trace components like zirconia $(ZrO_2)$.
+where $y_\epsilon$ is the abundance of passive tracer $\epsilon$ to be modeled, $\Delta y_\epsilon$ is the difference in its measured value from the model results, and $\sigma_{y_\epsilon}$ is the model error term for that tracer.
+This basic approach should apply for a variety of tracers, from radiogenic isotopic ratios like $(^{87}Sr/^{86}Sr)$, to the abundance of trace components like zirconia ($ZrO_2$).
 A major advantage of these passive tracers is that, since they do not directly influence the evolution of the system, their simulated values can be calculated in a post-processing step after the simulation is complete, easing computational requirements (especially if their evaluation is reserved only for otherwise well-fitting models).
 
 <!-- ## Passive tracers as records of formation pathway -->
@@ -110,11 +97,10 @@ Clues like stratigraphic sequence can help provide an ordering to the data, but 
 We must therefore turn to numerical tools that mimic our own intuitive 'by-eye' approach, utilizing pattern-matching techniques designed to quantify the differences between measurement and model trends in data space.
 
 The most straightforward of these techniques (Hausdorff distance optimization) relies on a nested two-stage process for minimizing the differences between the measurements and model predictions in terms of their 'distance' in data-space.
-A key insight to understanding this approach is to recognize that weighted least-squares type fitness metrics, like the rock mineralogy metric $\chi^2_s$ proposed here, itself takes the form of a (squared) distance.
- <!-- [[202101310621]] -->
+A key insight to understanding this approach is to recognize that weighted least-squares type fitness metrics, like the rock mineralogy metric $\chi^2_s$ proposed here [[202101310621]], itself takes the form of a (squared) distance.
 Such fitness metrics mathematically represent the squared-distance between two points in 'data-space', composed of the complete set of sample measurements each scaled by an appropriate model-error estimate.
-The error-scalings are discussed in more detail in a future post, but their main purpose is to place every measurement constraint on a common statistical deviance scale (e.g. in terms of number of sigma from their expected model value) and allow distinct data types to be combined in a single metric.
-<!-- [[202102011633]] -->
+**[NOTE-ASW: discussed in a future post]**
+The error-scalings are discussed in more detail in the following section [[202102011633]], but their main purpose is to place every measurement constraint on a common statistical deviance scale (e.g. in terms of number of sigma from their expected model value) and allow distinct data types to be combined in a single metric.
 The pattern-matching scheme leverages this distance interpretation to identify the appropriate point of comparison from a particular simulation as the nearest point in the simulation data-array to every measurement:
 $$
 \chi^2_s = \min_{t_{sim}} \{ \chi^2_s(t_{sim}) \}
@@ -127,4 +113,9 @@ $$
 The end result of this straightforward procedure is an ability to assign a single fitness value to every model simulation, reflecting how well it collectively captures the trends observed in the suite of sample measurements.
 
 
-# References
+
+## Future-work
+In a future post, we will explore the philosophical implications and potential consequences of assigning errors to the data in this newly proposed rock-fitting metric.
+Such statistical concerns highlight a general phenomenon associated with model-building---arising whenever a model cannot simultaneously capture every aspect of the dataset---in which the model calibration is pulled simultaneously toward multiple plausible solutions.
+This is especially common when calibrating against multiple data types or more broadly when the data can be split into groups, each of which is largely sensitive to a different subset of the model parameters.
+In science, imperfect models are the norm rather than the exception, and therefore our particular example of geologic modeling will serve as a concrete illustration of a general challenge common to nearly all data-based model-building exercises.
