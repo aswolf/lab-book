@@ -12,6 +12,9 @@ active: projects
 * [*2020-11-12:* **Benchmarking MEXQAL method for geologically-relevant phases**](2020-11-12-MEXQAL-geo-application.html)
 * [*2020-11-05:* **Calculating phase composition with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)**](2020-11-05-MEXQAL.html)
 
+## Modeling Rock Formation Histories
+* [*2021-02-03:* **Quantitative modeling of rock formation histories**](2021-02-03-rock-fitness-metric.html)
+
 ## Planetary Vapor Modeling
 * [*2021-01-25:* **Challenges with experimental validation of vaporization modeling**](2021-01-25-vaporock-validation-challenges.html)
 * [*2021-01-17:* **Thermochemical Rock Vaporization Database**](2021-01-17-thermochem-vapor-database.html)

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-02-03" />
+    
+  <title>Quantitative modeling of rock formation histories</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Quantitative modeling of rock formation histories</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-02-03) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>  </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href=".html">
+        </a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> One of the key challenges associated with analyzing the rock record is that samples taken from a petrologic sequence are known to have some genetic origin, but the nature and timing of that evolutionary link are only revealed through the modeling process. The usual assumptions made to enable modeling are that the fine-grained matrix of these samples represents the liquid composition in the magma chamber, while the phenocrysts represent saturated phases crystalizing from their parent liquid; the entire package is then erupted and delivered to the surface where they are added to the rock record. This straightforward interpretation can be complicated by the presence of xenocrysts (perhaps entrained from an earlier epoch of crystallization), but fortunately these xenocrysts usually stand out as clear outliers on the basis of texture and composition, allowing them to be identified and screened from the analysis (or otherwise incorporated into more complex models including partial disequilibrium). For typical cases, initial ‘modeling’ efforts can be fairly informal, taking the form of graphical analysis of compositional trends that can suggest some standard igneous process like fractional crystallization, assimilation, or magma mixing. But at this point, such assessments largely represent educated guesses which must be tested with quantitative modeling if further progress is to be made. The initial stages of such modeling often proceed using a <em>‘chi-by-eye’</em> approach (where chi-square, <span class="math inline">\(\chi^2\)</span>, is a typical symbol used for the goodness-of-fit metric). Though these analyses can provide results that are quite compelling, this process should be viewed as only the initial exploratory phase of a more in depth statistical analysis, providing early support for one or more working hypotheses, rather than a offering up finalized evidence. Having a quantitative metric to evaluate the quality of a modeling result is thus a critical obstacle to evaluating and comparing different competing formation hypotheses for a particular suite of rock samples. </em> </b>
+    </div>
+  
+
+  <div class="box" markdown="1">
+    <h2>Key Points</h2>
+    <ul>
+              <li> A general rock mineralogy fitness metric is proposed that captures the quality of a modeled mineral assemblage for an analyzed rock sample. </li>
+              <li> Fitness metric accounts for bulk-rock composition, phase assemblage, modal abundances, phase composition, and trace/isotopic trends. </li>
+              <li> Passive chemical tracers, like stable and radiogenic isotopes and trace elements, provide additional direct constraints on the evolutionary path of each sample. </li>
+              <li> Model fitness for an entire suite of rock samples is determined by identifying corresponding point in simulation to each rock sample (using Hausdorff distance optimization). </li>
+          </ul>
+  </div>
+
+  <!-- key-points here -->
+
+  <article class="post-content">
+    <!-- content -->
+    <!-- Outline Note index stored in [[202101260640]] *Fitness metric for modeling rock mineral assemblages* -->
+    <!-- # [[202101260640]] *Fitness metric for modeling rock mineral assemblages* -->
+    <!-- Motivation section is taken from [[202102020609]]-->
+    <!-- [[202102020609]] Inferring formation histories from rock sample suites -->
+    <h2 id="rock-mineralogy-fitness-metric">Rock mineralogy fitness metric</h2>
+    <!-- [[202101310621]] Overview of rock mineralogy fitness metric -->
+    <p>To explore the family of petrologic histories likely to produce a chosen set of rock samples, we need a quantitative metric that captures how well the model fits the mineralogical assemblage. Such a fitness metric must take into consideration many details reflecting the mineral assemblage and incorporate sensible relative weightings between different data types. This goodness-of-fit metric is then used to provide quantitative feedback to a Monte Carlo fitting procedure that identifies the family of models consistent with the data. We propose the following general purpose rock mineralogy fitness metric to capture the fidelity of a predicted mineral phase assemblage: <span class="math display">\[
+    \chi^2_s =\chi^2(\textrm{bulk-comp}) + \chi^2(\textrm{assem}) + \chi^2(\textrm{mode}) \\
+    +\sum_\phi^{\textrm{phases}} \chi^2_\phi(\textrm{comp})
+    +\chi^2(\textrm{chem-tracers})
+    \]</span> <!-- +\sum_{\epsilon}^{\textrm{tracers}}\chi^2_{\epsilon}(\textrm{chem}) --> where each term highlights a different contribution to the overall fitness of our model for rock sample (<span class="math inline">\(s\)</span>). The quality of the predicted mineral assemblage is thus judged on how it matches the overall bulk (or whole-rock) composition, <span class="math inline">\(\chi^2(\textrm{bulk-comp})\)</span>, the phases present in the mineral assemblage, <span class="math inline">\(\chi^2(\textrm{assem})\)</span>, the modal amounts for each mineral, <span class="math inline">\(\chi^2(\textrm{mode})\)</span>, and the individual composition of each phase, <span class="math inline">\(\chi^2_\phi(\textrm{comp})\)</span><!-- [[202101310624]] -->, with additional possible constraints from passive chemical tracers, <span class="math inline">\(\chi^2(\textrm{chem-tracers})\)</span>.</p>
+    <!-- ## Rock mineralogy fitness metric terms -->
+    <!-- [[202101310624]] Rock mineralogy fitness metric terms -->
+    <p>For each term in the mineral-rock assemblage fitting metric, we introduce a least-squares type fitness criterion that is specifically designed to capture that particular data type. We quantify the contribution of each of these fitness terms in the following Table:</p>
+    <table>
+    <caption>Table 1: Rock Fitness Metric Terms</caption>
+    <colgroup>
+    <col style="width: 40%" />
+    <col style="width: 30%" />
+    <col style="width: 30%" />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th style="text-align: left;">term</th>
+    <th style="text-align: center;">summation</th>
+    <th style="text-align: center;">term</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td style="text-align: left;"><span class="math inline">\(\chi^2(\textrm{bulk-comp})\)</span></td>
+    <td style="text-align: center;">system components</td>
+    <td style="text-align: center;"><span class="math inline">\(\sum\limits_i \left( \Delta \hat{X}_i^{sys} /\sigma_{\hat{X}}^{sys} \right)^2\)</span></td>
+    </tr>
+    <tr class="even">
+    <td style="text-align: left;"><span class="math inline">\(\chi^2(\textrm{assem})\)</span></td>
+    <td style="text-align: center;">phases</td>
+    <td style="text-align: center;"><span class="math inline">\(\sum\limits_\phi \left( \mathcal{A}_\phi / \sigma_{\mathcal{A}_\phi} \right)^2\)</span></td>
+    </tr>
+    <tr class="odd">
+    <td style="text-align: left;"><span class="math inline">\(\chi^2(\textrm{mode})\)</span></td>
+    <td style="text-align: center;">phases</td>
+    <td style="text-align: center;"><span class="math inline">\(\sum\limits_\phi \left( \Delta f_\phi / \sigma_{f_\phi} \right)^2\)</span></td>
+    </tr>
+    <tr class="even">
+    <td style="text-align: left;"><span class="math inline">\(\chi^2_\phi(\textrm{comp})\)</span></td>
+    <td style="text-align: center;">phase components</td>
+    <td style="text-align: center;"><span class="math inline">\(\sum\limits_j \left( \Delta \hat{X}_j^{\phi} / \sigma_{\hat{X}}^{\phi} \right)^2\)</span></td>
+    </tr>
+    <tr class="odd">
+    <td style="text-align: left;"><span class="math inline">\(\chi^2(\textrm{chem-tracers})\)</span></td>
+    <td style="text-align: center;">passive chemical tracers</td>
+    <td style="text-align: center;"><span class="math inline">\(\sum\limits_\epsilon \left( \Delta y_{\epsilon} / \sigma_{y_\epsilon} \right)^2\)</span></td>
+    </tr>
+    </tbody>
+    </table>
+    <p>where <span class="math inline">\(\hat{X}_i^{sys}\)</span> and <span class="math inline">\(\hat{X}^\phi_j\)</span> are the compositional vectors for the system and phase <span class="math inline">\(\phi\)</span>, <span class="math inline">\(f_\phi\)</span> and <span class="math inline">\(\mathcal{A}_\phi\)</span> are the phase fraction and saturation affinities for phase <span class="math inline">\(\phi\)</span>, and <span class="math inline">\(y_\epsilon\)</span> are the chemical abundances for passive tracer <span class="math inline">\(\epsilon\)</span>. Most terms depend on the difference (<span class="math inline">\(\Delta\)</span>) between the measured and model values, except for the saturation affinity which inherently reflects an energetic deviation from equilibrium. The relative weightings of each of these data-types is controlled by the error weighting factors <span class="math inline">\(\sigma\)</span> present in every fitness term [[202102011633]]. We have identified five major contributions to this fitness, and outlined how they can be easily quantified using a petrological formation model like the Magma Chamber Simulator. These comparisons range from broad summary data (like the whole rock composition) down to comprehensive detail-oriented data (like the compositions of each individual phase). At either end of this spectrum, we have direct comparison of predicted and measured compositions—of individual phases or the rock as a whole—which can use straightforward oxide wt. fractions or more sophisticated methods that account for natural variability generated by igneous processes [[202102020605]]. At an intermediate level of detail, we have comparisons of the phase assemblage (which minerals are present) and the modal mineral abundances (comparing phase fractions by weight or moles of oxides). This intermediate scale is critical, since it ensures that correct phases are actually present in the rock (or at least very nearly stable based on their saturation affinities) and in generally the right amounts. Taken together, these four terms encapsulate the major and minor components of the rock that largely control the phase equilibria as the rock is formed. Additional constraints can be imposed by trace element and isotopic data, which are distinct in that they represent passive tracers in the system and thus play no role in the phase equilibria that the determine the major mineralogy of the rock samples [[202102021055]].</p>
+    <h2 id="passive-tracers-as-records-of-formation-pathway">Passive tracers as records of formation pathway</h2>
+    <!-- ## Fitness metric for passive chemical tracers -->
+    <!-- # [[202102021055]] Fitness metric for passive chemical tracers -->
+    <p>Passive chemical tracers like stable or radiogenic isotopes and trace elements provide powerful constraints on path-dependent rock formation histories, since their preferential partitioning into either the liquid or solid mineral phases provides a record of the evolving mass balance between the liquid and fractionating crystals being lost from the system. The additional terms quantifying these passive tracers adopt a form similar to the phase composition constraints: <span class="math display">\[
+    \chi^2(\textrm{chem-tracers}) = \sum\limits_\epsilon^\textrm{tracers} \left(\Delta y_\epsilon / \sigma_{y_\epsilon}\right)^2
+    \]</span> where <span class="math inline">\(y_\epsilon\)</span> is the abundance of passive tracer <span class="math inline">\(\epsilon\)</span> to be modeled, <span class="math inline">\(\Delta y_\epsilon\)</span> is the difference in its measured value from the model results, and <span class="math inline">\(\sigma_{y_\epsilon}\)</span> is the model error term for that tracer. This basic approach should apply for a variety of tracers, from radiogenic isotopic ratios like <span class="math inline">\((^{87}Sr/^{86}Sr)\)</span>, to the abundance of trace components like zirconia (<span class="math inline">\(ZrO_2\)</span>). A major advantage of these passive tracers is that, since they do not directly influence the evolution of the system, their simulated values can be calculated in a post-processing step after the simulation is complete, easing computational requirements (especially if their evaluation is reserved only for otherwise well-fitting models).</p>
+    <!-- ## Passive tracers as records of formation pathway -->
+    <!-- [[202102021421]] Passive tracers record rock formation histories -->
+    <p>From a scientific modeling perspective, these tracers impose key independent constraints on the problem of inferring rock formation histories, as mineral assemblages generally only constrain the state of the magma chamber that produced that particular erupted rock sample. This is a basic consequence of the path-independence of thermodynamic equilibrium. Inference of the entire formation history therefore relies heavily upon following the chemical trajectory of the eruptive sequence of rocks, often combined with assumptions about the compositions and properties of the magma reservoirs involved (e.g. size and chemistry of magmatic recharge pulses or the degree of interaction with surrounding wall rock). In contrast, passive chemical tracers with their high sensitivity to mineral-liquid fractionation allows them to retain memory of the fractionation pathway that is reflected in the measured values even within a single sample. This effect is further amplified for radiogenic isotope systems with relevant decay lifetimes, which constrain an absolute timescale for the formation process. Thus, the combination of passive tracer data and major component mineral assemblage constraints can dramatically improve inference of the earliest stages of formation and also provide independent checks on the simplifying assumptions often adopted during analysis of the major element chemistry and mineral phase assemblages.</p>
+    <h2 id="mapping-a-modeled-magmatic-history-onto-a-rock-sample-suite">Mapping a modeled magmatic history onto a rock sample suite</h2>
+    <p>Even given such a metric, we must determine how best to apply it to the sample suite, since while evolutionary progress is well-constrained within the model (e.g. the temperature cooling sequence), it is largely unknown for the natural rocks. Clues like stratigraphic sequence can help provide an ordering to the data, but precise markers for evolutionary progress remain a mystery, thereby clouding our ability to uniquely identify each piece of analytical data with a unique corresponding point in the model simulation. We must therefore turn to numerical tools that mimic our own intuitive ‘by-eye’ approach, utilizing pattern-matching techniques designed to quantify the differences between measurement and model trends in data space.</p>
+    <p>The most straightforward of these techniques (Hausdorff distance optimization) relies on a nested two-stage process for minimizing the differences between the measurements and model predictions in terms of their ‘distance’ in data-space. A key insight to understanding this approach is to recognize that weighted least-squares type fitness metrics, like the rock mineralogy metric <span class="math inline">\(\chi^2_s\)</span> proposed here [[202101310621]], itself takes the form of a (squared) distance. Such fitness metrics mathematically represent the squared-distance between two points in ‘data-space,’ composed of the complete set of sample measurements each scaled by an appropriate model-error estimate. <strong>[NOTE-ASW: discussed in a future post]</strong> The error-scalings are discussed in more detail in the following section [[202102011633]], but their main purpose is to place every measurement constraint on a common statistical deviance scale (e.g. in terms of number of sigma from their expected model value) and allow distinct data types to be combined in a single metric. The pattern-matching scheme leverages this distance interpretation to identify the appropriate point of comparison from a particular simulation as the nearest point in the simulation data-array to every measurement: <span class="math display">\[
+    \chi^2_s = \min_{t_{sim}} \{ \chi^2_s(t_{sim}) \}
+    \]</span> where the minimum of the fitness metric is calculated for sample <span class="math inline">\(s\)</span> with respect to the simulation timestep (<span class="math inline">\(t_{sim}\)</span>), revealing the most representative point in the simulation history for the current sample. This provides a direct mapping between observations and simulation results, and the total fitness of this simulation is then just the sum of each of these squared distances across every sample: <span class="math display">\[
+    \chi^2 = \sum\limits_s^\textrm{samples} \chi^2_s
+    \]</span> The end result of this straightforward procedure is an ability to assign a single fitness value to every model simulation, reflecting how well it collectively captures the trends observed in the suite of sample measurements.</p>
+    <h1 id="references">References</h1>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> In a future post, we will explore the philosophical implications and potential consequences of assigning errors to the data in this newly proposed rock-fitting metric. Such statistical concerns highlight a general phenomenon associated with model-building—arising whenever a model cannot simultaneously capture every aspect of the dataset—in which the model calibration is pulled simultaneously toward multiple plausible solutions. This is especially common when calibrating against multiple data types or more broadly when the data can be split into groups, each of which is largely sensitive to a different subset of the model parameters. In science, imperfect models are the norm rather than the exception, and therefore our particular example of geologic modeling will serve as a concrete illustration of a general challenge common to nearly all data-based model-building exercises. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>
