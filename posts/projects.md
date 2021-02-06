@@ -13,6 +13,7 @@ active: projects
 * [*2020-11-05:* **Calculating phase composition with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)**](2020-11-05-MEXQAL.html)
 
 ## Modeling Rock Formation Histories
+* [*2021-02-06:* **Data-weights for Meaningful Models**](2021-02-06-meaningful-data-weights.html)
 * [*2021-02-03:* **Quantitative modeling of rock formation histories**](2021-02-03-rock-fitness-metric.html)
 
 ## Planetary Vapor Modeling

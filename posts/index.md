@@ -13,15 +13,16 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(02/03/2021)*
-* [**Quantitative modeling of rock formation histories**](2021-02-03-rock-fitness-metric.html)
+## Latest Posting *(02/06/2021)*
+* [**Data-weights for Meaningful Models**](2021-02-06-meaningful-data-weights.html)
 
-## Next Posting *(Due: 02/05/2021)*
+## Next Posting *(Due: 02/11/2021)*
 * **TBD**
 
 </div>
 
 ## Past Entries
+* [*2021-02-06:* **Data-weights for Meaningful Models**](2021-02-06-meaningful-data-weights.html)
 * [*2021-02-03:* **Quantitative modeling of rock formation histories**](2021-02-03-rock-fitness-metric.html)
 * [*2021-01-25:* **Challenges with experimental validation of vaporization modeling**](2021-01-25-vaporock-validation-challenges.html)
 * [*2021-01-17:* **Thermochemical Rock Vaporization Database**](2021-01-17-thermochem-vapor-database.html)

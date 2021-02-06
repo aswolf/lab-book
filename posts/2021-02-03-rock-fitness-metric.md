@@ -5,8 +5,8 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-02-03
 next:
-  post:
-  title:
+  post: 2021-02-06-meaningful-data-weights
+  title: 'Data weights for meaningful models: inferring rock-formation histories'
 motivation:
   One of the key challenges associated with analyzing the rock record is that samples taken from a petrologic sequence are known to have some genetic origin, but the nature and timing of that evolutionary link are only revealed through the modeling process.
   The usual assumptions made to enable modeling are that the fine-grained matrix of these samples represents the liquid composition in the magma chamber, while the phenocrysts represent saturated phases crystalizing from their parent liquid; the entire package is then erupted and delivered to the surface where they are added to the rock record.
