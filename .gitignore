@@ -1,3 +1,4 @@
 /docs/drafts
 export
 export/*
+*.DS_Store

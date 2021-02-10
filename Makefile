@@ -77,6 +77,9 @@ draft :
 	cp -n templates/post-template.md posts/drafts/$(file).md
 
 
+.PHONY : export
+export :
+	pandoc --citeproc --bibliography=$(BIB_FILE) -t docx --mathjax -o export/$(file).docx -s posts/$(file).md
 
 
 ##############
