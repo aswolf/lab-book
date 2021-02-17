@@ -89,16 +89,17 @@
   $endif$
 
 
-  <div class="box" markdown="1">
-    <h2>Key Points</h2>
-    <ul>
-      $for(key-points)$
-        <li> $it$ </li>
-      $endfor$
-    </ul>
-  </div>
+  $if(key-points)$
+    <div class="box" markdown="1">
+      <h2>Key Points</h2>
+      <ul>
+        $for(key-points)$
+          <li> $it$ </li>
+        $endfor$
+      </ul>
+    </div>
+  $endif$
 
-  <!-- key-points here -->
 
   <article class="post-content">
     <!-- content -->

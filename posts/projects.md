@@ -22,6 +22,7 @@ active: projects
 * [*2021-01-08:* **Theory of Vaporized Rocks**](2021-01-08-vapor-rock-theory.html)
 
 ## Academic Writing
+* [*2021-02-17:* **Manuscript Revision Writing Workshop Syllabus**](2021-02-17-writing-workshop-syllabus.html)
 * [*2020-12-31:* **New open lab notebook prototype**](2020-12-31-new-lab-book.html)
 * [*2020-12-18:* **Urgently seeking equilibrium Working Draft (Paper I)**](2020-12-18-equilibrium-paper-draft.html)
 * [*2020-12-11:* **Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms**](2020-12-11-equilibrium-paper-outlines.html)

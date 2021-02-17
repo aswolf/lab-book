@@ -4,6 +4,8 @@ BIB_FILE=refs.bib
 # Find all pages #
 ##################
 
+# Create pattern for index section pages either wildcard w/ substitution or using site structure (separating posts into separate directory)
+
 posts_md = $(wildcard posts/*.md)
 posts_html = $(patsubst posts/%.md,docs/%.html,$(posts_md))
 
@@ -86,6 +88,8 @@ export :
 # Main Pages #
 ##############
 
+# Need to generalize to any section index page (possibly by separating from posts in directory structure?)
+
 # site index (uses default pandoc html template)
 docs/index.html : posts/index.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
@@ -94,6 +98,9 @@ docs/projects.html : posts/projects.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 docs/writing-tracker.html : posts/writing-tracker.md $(templates) $(images)
+	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+
+docs/writing-workshop.html : posts/writing-workshop.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 
