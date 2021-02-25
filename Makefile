@@ -5,7 +5,6 @@ BIB_FILE=refs.bib
 ##################
 
 # Create pattern for index section pages either wildcard w/ substitution or using site structure (separating posts into separate directory)
-
 posts_md = $(wildcard posts/*.md)
 posts_html = $(patsubst posts/%.md,docs/%.html,$(posts_md))
 
@@ -56,9 +55,9 @@ images : images/*
 	ln -f -s ../images docs/drafts/images
 
 .PHONY : figs
-figs : posts/figs/* posts/drafts/figs/*
+figs : posts/figs/*
 	cp -r posts/figs docs/.
-	cp -r posts/drafts/figs docs/drafts/.
+	# cp -r posts/drafts/figs docs/drafts/.
 
 .PHONY : docs
 docs : posts/docs/*
@@ -78,6 +77,13 @@ draft :
 	# echo $(basenm)
 	cp -n templates/post-template.md posts/drafts/$(file).md
 
+.PHONY : preview
+preview :
+	open 'http://[::]:8080/lab-book'; python -m http.server --cgi 8080
+
+.PHONY : preview-drafts
+preview-drafts :
+	open 'http://[::]:8080/lab-book/drafts/'; python -m http.server --cgi 8080
 
 .PHONY : export
 export :
