@@ -5,10 +5,13 @@ BIB_FILE=refs.bib
 ##################
 
 # Create pattern for index section pages either wildcard w/ substitution or using site structure (separating posts into separate directory)
-posts_md = $(wildcard posts/*.md)
-posts_html = $(patsubst posts/%.md,docs/%.html,$(posts_md))
+posts_md = $(wildcard pages/posts/*.md)
+posts_html = $(patsubst pages/posts/%.md,docs/posts/%.html,$(posts_md))
 
+pages_md = $(wildcard pages/*.md)
+pages_html = $(patsubst pages/%.md,docs/%.html,$(pages_md))
 
+# fix drafts
 post_drafts_md = $(wildcard posts/drafts/*.md)
 post_drafts_html = $(patsubst posts/drafts/%.md,docs/drafts/%.html,$(post_drafts_md))
 
@@ -40,7 +43,7 @@ POST_CSS_HTML_OPTIONS = --template=templates/post.html --css templates/main.css 
 
 
 .PHONY : all
-all : templates images figs docs posts post_drafts
+all : templates images figs docs pages posts post_drafts
 	touch docs/.nojekyll
 
 .PHONY : templates
@@ -55,22 +58,25 @@ images : images/*
 	ln -f -s ../images docs/drafts/images
 
 .PHONY : figs
-figs : posts/figs/*
-	cp -r posts/figs docs/.
+figs : pages/figs/*
+	cp -r pages/figs docs/.
 	# cp -r posts/drafts/figs docs/drafts/.
 
 .PHONY : docs
-docs : posts/docs/*
-	cp -r posts/docs docs/.
+docs : pages/docs/*
+	cp -r pages/docs docs/.
 
+
+.PHONY : pages
+pages : $(pages_html)
 
 .PHONY : posts
 posts : $(posts_html)
 
-
 .PHONY : post_drafts
 post_drafts : $(post_drafts_html)
 
+# TK fix
 .PHONY : draft
 draft :
 	# basenm = basename $(file) .md
@@ -85,6 +91,7 @@ preview :
 preview-drafts :
 	open 'http://[::]:8080/lab-book/drafts/'; python -m http.server --cgi 8080
 
+# fix TK
 .PHONY : export
 export :
 	pandoc --citeproc --bibliography=$(BIB_FILE) -t docx --mathjax -o export/$(file).docx -s posts/$(file).md
@@ -97,26 +104,26 @@ export :
 # Need to generalize to any section index page (possibly by separating from posts in directory structure?)
 
 # site index (uses default pandoc html template)
-docs/index.html : posts/index.md $(templates) $(images)
+docs/index.html : pages/index.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/projects.html : posts/projects.md $(templates) $(images)
+docs/projects.html : pages/projects.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/writing-tracker.html : posts/writing-tracker.md $(templates) $(images)
+docs/writing-tracker.html : pages/writing-tracker.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/writing-workshop.html : posts/writing-workshop.md $(templates) $(images)
+docs/writing-workshop.html : pages/writing-workshop.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 # Temporary location
-docs/workshop-syllabus.html : posts/workshop-syllabus.md $(templates) $(images)
+docs/workshop-syllabus.html : pages/workshop-syllabus.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/workshop-handout1.html : posts/workshop-handout1.md $(templates) $(images)
+docs/workshop-handout1.html : pages/workshop-handout1.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/workshop-handout2.html : posts/workshop-handout2.md $(templates) $(images)
+docs/workshop-handout2.html : pages/workshop-handout2.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 #########
@@ -125,7 +132,7 @@ docs/workshop-handout2.html : posts/workshop-handout2.md $(templates) $(images)
 # --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax
 
 # all posts use custom post.html pandoc template
-docs/%.html : posts/%.md $(templates) $(images)
+docs/posts/%.html : pages/posts/%.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(POST_CSS_HTML_OPTIONS) -o $@ -s $<
 	# pandoc --citeproc --bibliography=$(BIB_FILE) --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
 
@@ -134,6 +141,7 @@ docs/%.html : posts/%.md $(templates) $(images)
 ##########
 # --citeproc --bibliography=$(BIB_FILE) --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html  --mathjax
 
+# fix TK
 # all posts use custom post.html pandoc template
 docs/drafts/%.html : posts/drafts/%.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(POST_CSS_HTML_OPTIONS) -o $@ -s $<
@@ -150,3 +158,4 @@ docs/drafts/index.html : posts/drafts/index.md $(templates) $(images)
 clean :
 	rm -rf docs/*
 	mkdir docs/drafts
+	mkdir docs/posts

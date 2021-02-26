@@ -5,15 +5,20 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-12-04
 prev:
-  post: 2020-11-19-MEXQAL-rapid-geo-benchmark
+  post: posts/2020-11-19-MEXQAL-rapid-geo-benchmark
   title: Least-squares-optimized MEXQAL calculations for geo-phases
 next:
-  post: 2020-12-11-equilibrium-paper-outlines
+  post: posts/2020-12-11-equilibrium-paper-outlines
   title: 'Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms'
-motivation: |
-  Rapid and robust determination of equilibrium is critical for thermodynamic simulations. Predicting the evolving state of the system hinges entirely on the speed and trustworthiness of the underlying algorithms responsible for finding the equilibrium states of each phase. Given the large abundance and variety of phases relevant to geological and planetary simulations, this demands a general technique that is sure to rapidly converge to the optimal answer, regardless of the details of the particular phase.
-  In this post, I focus on describing the foundations of the two simplest local approximations available for solution mixing models. The ideal and linear solution approximations form the foundation of the local regular solution approximation, to be presented in next week's post.
-future-work: Most of what I prepared for this post had to be removed due to a missing term in my derivation of the regular solution model. In next week's post, we will thus explore the mathematical and performance details of the local regular solution approximation.
+motivation:
+  Rapid and robust determination of equilibrium is critical for thermodynamic simulations.
+  Predicting the evolving state of the system hinges entirely on the speed and trustworthiness of the underlying algorithms responsible for finding the equilibrium states of each phase.
+  Given the large abundance and variety of phases relevant to geological and planetary simulations, this demands a general technique that is sure to rapidly converge to the optimal answer, regardless of the details of the particular phase.
+  In this post, I focus on describing the foundations of the two simplest local approximations available for solution mixing models.
+  The ideal and linear solution approximations form the foundation of the local regular solution approximation, to be presented in next week's post.
+future-work:
+  Most of what I prepared for this post had to be removed due to a missing term in my derivation of the regular solution model.
+  In next week's post, we will thus explore the mathematical and performance details of the local regular solution approximation.
 key-points:
   - Ideal solution model assumes non-interacting components in the mixture, leading to a weighted average Gibbs energy modified only by the entropy of mixing.
   - Linear solution model provides a basic linear description for solution phases which has greater accuracy for small compositional perturbations, but lacks any awareness of entropic mixing.

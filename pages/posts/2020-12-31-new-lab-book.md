@@ -5,11 +5,18 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-12-31
 prev:
-  post: 2020-12-11-equilibrium-paper-outlines
+  post: posts/2020-12-11-equilibrium-paper-outlines
   title: 'Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms'
 next:
-motivation: Given all the distractions of the holiday season, I decided to focus on getting my writing productivity system fully set up. This requires a tight integration of how weekly posts and manuscripts are produced, allowing easy incorporation of posts into growing manuscripts. This post highlights the devleopment work of the past couple weeks.
-future-work: The creation of this new pandoc-powered lab-book software is a major step on my journey toward a seemless writing workflow. I look forward to enjoying the fruits of this labor in 2021. Goodbye 2020--and good riddance. Let's make it a productive new year, practicing good habits, and creating as much meaning as possible along the way.
+motivation:
+  Given all the distractions of the holiday season, I decided to focus on getting my writing productivity system fully set up.
+  This requires a tight integration of how weekly posts and manuscripts are produced, allowing easy incorporation of posts into growing manuscripts.
+  This post highlights the devleopment work of the past couple weeks.
+future-work:
+  The creation of this new pandoc-powered lab-book software is a major step on my journey toward a seemless writing workflow.
+  I look forward to enjoying the fruits of this labor in 2021.
+  Goodbye 2020--and good riddance.
+  Let's make it a productive new year, practicing good habits, and creating as much meaning as possible along the way.
 key-points:
   - lab-book posts & manuscripts need different syntax for figures, citations, & document references
   - writing workflow from notebook to manuscript is hindered by differences

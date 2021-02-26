@@ -5,7 +5,7 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-02-03
 next:
-  post: 2021-02-06-meaningful-data-weights
+  post: posts/2021-02-06-meaningful-data-weights
   title: 'Data weights for meaningful models: inferring rock-formation histories'
 motivation:
   One of the key challenges associated with analyzing the rock record is that samples taken from a petrologic sequence are known to have some genetic origin, but the nature and timing of that evolutionary link are only revealed through the modeling process.

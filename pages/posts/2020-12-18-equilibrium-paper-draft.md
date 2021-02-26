@@ -5,12 +5,16 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-12-18
 prev:
-  post: 2020-12-11-equilibrium-paper-outlines
+  post: posts/2020-12-11-equilibrium-paper-outlines
   title: 'Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms'
 next:
-motivation: Building from last week's paper outline, I have used the pandoc-scholar-template to build a working draft for the first equilibrium paper. This working draft is by no means finished---but it is reasonably well fleshed out in terms of its planned elements, it has a methods section that is approaching completion, and a jump start on the results section.
-
-future-work: In future weeks, I will focus on identifying and working on the primary missing elements or sections of the manuscript. These can be tackled one at a time as separate weekly posts, and then incorporated into the developing manuscript. Fairly soon, I will also be able to bring greater focused attention to the 'Methods' section as a whole, as I begin revising it once it reaches the completed rough draft stage.
+motivation:
+  Building from last week's paper outline, I have used the pandoc-scholar-template to build a working draft for the first equilibrium paper.
+  This working draft is by no means finished---but it is reasonably well fleshed out in terms of its planned elements, it has a methods section that is approaching completion, and a jump start on the results section.
+future-work:
+  In future weeks, I will focus on identifying and working on the primary missing elements or sections of the manuscript.
+  These can be tackled one at a time as separate weekly posts, and then incorporated into the developing manuscript.
+  Fairly soon, I will also be able to bring greater focused attention to the 'Methods' section as a whole, as I begin revising it once it reaches the completed rough draft stage.
 key-points:
   - pandoc-scholar-template was used to create a working draft of the equilibrium algorithm paper 1
   - combining of previous lab posts in the markdown document provided an easy road toward creating a draft paper

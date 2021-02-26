@@ -5,13 +5,12 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-01-08
 next:
-  post: 2021-01-17-thermochem-vapor-database
+  post: posts/2021-01-17-thermochem-vapor-database
   title: 'Thermochemical Database for vaporization/condensation'
 motivation:
   Silicate vapors receive little attention in many geoscience contexts, but these outgassed vapors play key roles in planetary evolution spanning the full range of planetary length- and time-scales, from the earliest proto-dust grains to the eventual erosion and erasure of entire rocky planets.
   Thermodynamic equilibrium ensures that rocky silicate vapors are always present above condensed (liquid or solid) phases, though typically at very low pressures.
   In most situations, these vapors are (rightly) ignored when other external processes dominate, such as the biotically controlled surface conditions on Earth.
-
 
   But outgassed vapors are critical in key high-temperature stages of planetary evolution, which appear throughout the planet's lifetime.
   Before planets or rocks even exist, vapors condense from the stellar nebula to form the original planetary building blocks.

@@ -5,12 +5,19 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-11-19
 prev:
-  post: 2020-11-12-MEXQAL-geo-application
+  post: posts/2020-11-12-MEXQAL-geo-application
   title: Benchmarking MEXQAL method for geologically-relevant phases
 next:
-  post: 2020-12-04-basic-solution-perturbation-models
+  post: posts/2020-12-04-basic-solution-perturbation-models
   title: Basic composition-perturbation models for solution phases
-motivation: In the previous section, we demonstrated how the MEXQAL algorithm can applied to geologically-relevant phases and is capable of accurately determining phase compositions under typical modeling conditions. These calculations used the direct iterative convergence method described previously (modeled after the approach of @Ghiorso2013), ensuring relatively fast and accurate results. But low-level routines like MEXQAL are called thousands of times (or more) in a typical large-scale simulation application, such as tracking an evolving phase assemblage or calibrating a new thermodynamic model requiring many repeat calculations with slightly altered parameter values. With such highly repetitive applications comprising the primary use-cases for this algorithm, speed is of the utmost importance. We are therefore motivated to develop a modified procedure that linearizes the compositional update procedure to obtain further performance gains. This section focuses on approximating the chemical potential expression for the phase by shifting to logarithmic-composition space, enabling the use of highly optimized linear least-squares methods to update the composition with each iteration, completely replacing the inner iteration loop discussed previously with a single optimal-update step. While this is in principle fairly straightforward, additional complications arise surrounding the use of degenerate species (rather than independent components)---as required for complex multi-site solution phases like clinopyroxene and spinel---and the necessary mathematical transformations are also derived and presented below.
+motivation:
+  In the previous section, we demonstrated how the MEXQAL algorithm can applied to geologically-relevant phases and is capable of accurately determining phase compositions under typical modeling conditions.
+  These calculations used the direct iterative convergence method described previously (modeled after the approach of @Ghiorso2013), ensuring relatively fast and accurate results.
+  But low-level routines like MEXQAL are called thousands of times (or more) in a typical large-scale simulation application, such as tracking an evolving phase assemblage or calibrating a new thermodynamic model requiring many repeat calculations with slightly altered parameter values.
+  With such highly repetitive applications comprising the primary use-cases for this algorithm, speed is of the utmost importance.
+  We are therefore motivated to develop a modified procedure that linearizes the compositional update procedure to obtain further performance gains.
+  This section focuses on approximating the chemical potential expression for the phase by shifting to logarithmic-composition space, enabling the use of highly optimized linear least-squares methods to update the composition with each iteration, completely replacing the inner iteration loop discussed previously with a single optimal-update step.
+  While this is in principle fairly straightforward, additional complications arise surrounding the use of degenerate species (rather than independent components)---as required for complex multi-site solution phases like clinopyroxene and spinel---and the necessary mathematical transformations are also derived and presented below.
 key-points:
   - Exchange equilibrium conditions can be found approximately by transforming to log-composition space; this yields a set of coupled linear equations, with $\Delta \log X_i$ and $A$ as unknowns, that can be solved using least squares.
   - Fractional composition adjustments must be rather small (<0.1), otherwise the accuracy of the approximate normalized composition equation suffers.

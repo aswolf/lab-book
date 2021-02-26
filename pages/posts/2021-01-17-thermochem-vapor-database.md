@@ -5,15 +5,22 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-01-17
 prev:
-  post: 2021-01-08-vapor-rock-theory
+  post: posts/2021-01-08-vapor-rock-theory
   title: 'Thermodynamics of Vaporized Rock'
 next:
-  post: 2021-01-25-vaporock-validation-challenges
+  post: posts/2021-01-25-vaporock-validation-challenges
   title: 'Challenges with experimental validation of vaporization modeling'
 motivation:
-  Having demonstrated the strong scientific motivation for better understanding silicate vaporization processes, we propose to develop a new code VapoRock, which combines the MELTS liquid model (as implemented by the ThermoEngine code) with gas-species properties from the thermochemistry tables of NIST-JANAF and @Lamoreaux1984 & @Lamoreaux1987, enabling coexisting vapor speciation calculations similar to those provided by the MAGMA code. VapoRock is fully capable of determining gaseous species abundances in contact with a magma, represented using the MELTS liquid model. MELTS has been rigorously tested and validated by the petrology community over the last 25 years. Currently, the closed-source tool MAGMA is the only one available that is capable of predicting gas abundances in equilibrium with a magma ocean. Thus a major benefit of our project will be the extension of the open-source ThermoEngine code to treat magma-vapor systems as a new tool for the community.
+  Having demonstrated the strong scientific motivation for better understanding silicate vaporization processes, we propose to develop a new code VapoRock, which combines the MELTS liquid model (as implemented by the ThermoEngine code) with gas-species properties from the thermochemistry tables of NIST-JANAF and @Lamoreaux1984 & @Lamoreaux1987, enabling coexisting vapor speciation calculations similar to those provided by the MAGMA code.
+  VapoRock is fully capable of determining gaseous species abundances in contact with a magma, represented using the MELTS liquid model.
+  MELTS has been rigorously tested and validated by the petrology community over the last 25 years.
+  Currently, the closed-source tool MAGMA is the only one available that is capable of predicting gas abundances in equilibrium with a magma ocean.
+  Thus a major benefit of our project will be the extension of the open-source ThermoEngine code to treat magma-vapor systems as a new tool for the community.
 future-work:
-  In this post, we have described the remaining requisite pieces needed for practical thermodynamic computations. At this stage, we are fully capable of performing predictive models of silicate vapor outgassing, to be presented in a future post. Additionally, we will carry out and analyze validation calculations to compare the results of VapoRock to the existing vapor software MAGMA. In particular, we will focus on the qualitative similarities and work to understand the root cause of key quantitative differences.
+  In this post, we have described the remaining requisite pieces needed for practical thermodynamic computations.
+  At this stage, we are fully capable of performing predictive models of silicate vapor outgassing, to be presented in a future post.
+  Additionally, we will carry out and analyze validation calculations to compare the results of VapoRock to the existing vapor software MAGMA.
+  In particular, we will focus on the qualitative similarities and work to understand the root cause of key quantitative differences.
 key-points:
   - A thermochemical database for liquid/vapor coexistence in geologic systems is constructed based on the MELTS thermodynamic model combined with lab-based vapor species thermal models at 1bar.
   - Liquid components and vapor species are converted to common oxide basis (system components) to enable simple equilibrium calculations

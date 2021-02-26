@@ -5,7 +5,7 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-02-17
 next:
-  post: 2021-02-26-writing-workshop-week1
+  post: posts/2021-02-26-writing-workshop-week1
   title: 'Writing Workshop Week 1: Reverse Outlines & Creating Value'
 motivation:
   This is a syllabus for a writing workshop I've developed for early-career academic professionals aimed at building writing revision skills from the ground up.
@@ -16,7 +16,6 @@ motivation:
   Revision is a cognitively demanding task best accomplished in focused work sessions (1-2 hours each day) separated by breaks to regain the broader perspective required for tailoring your own work to the needs of others; producing a quality polished manuscript is a marathon, not a sprint.
   Participants should form small groups to provide accountability and feedback for each other, supplementing instructor input.
   Depending on work intensity, it should take 1 to 2 months to complete the workshop, producing a mature manuscript draft that is ready for full review by co-authors, followed by journal submission soon thereafter.
-
 future-work:
   In future posts, I will flesh out the contents of each unit in the workshop. These posts will also be reproduced and updated in a new section of the website (writing-workshop) available from the links at the top of the page.
 key-points:

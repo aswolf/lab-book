@@ -5,15 +5,24 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-12-11
 prev:
-  post: 2020-12-04-basic-solution-perturbation-models
+  post: posts/2020-12-04-basic-solution-perturbation-models
   title: Basic composition-perturbation models for solution phases
 next:
-  post: 2020-12-18-equilibrium-paper-draft
+  post: posts/2020-12-18-equilibrium-paper-draft
   title: Urgently seeking equilibrium Working Draft (Paper I)
-motivation: For this week, I have developed an article template for use with the markdown-based 'pandoc-scholar' software. It uses a simplified (hassle-free) markdown input file, which is then processed to simultaneously produce many output formats including html, pdf, latex, docx (word), odt, epub. The goal is to produce a manuscript for submission to journals where only minor modifications (if any) need be applied to the final submitted file. When in doubt, let the copy editors take care of it.
+motivation:
+  For this week, I have developed an article template for use with the markdown-based 'pandoc-scholar' software.
+  It uses a simplified (hassle-free) markdown input file, which is then processed to simultaneously produce many output formats including html, pdf, latex, docx (word), odt, epub.
+  The goal is to produce a manuscript for submission to journals where only minor modifications (if any) need be applied to the final submitted file.
+  When in doubt, let the copy editors take care of it.
 
-  With this manuscript preparation in mind, I present an outline for the current equilibrium algorithm focused manuscripts. These outlines combined with previous lab-book posts will form the basis for a first draft using the new pandoc-scholar-template I have developed.
-future-work: In future weeks, these outlines will be combined with the posts already made to this site to produce a rough draft of the first paper. This is already in progress, and will be posted here in future weeks, once greater revision has been carried out. The manuscript uses the same pandoc-scholar-template described and linked above. This approach appears to be incredibly powerful for keeping things simple and professional, and reducing unnecessary work in porting lab-book posts directly into the manuscript.
+  With this manuscript preparation in mind, I present an outline for the current equilibrium algorithm focused manuscripts.
+  These outlines combined with previous lab-book posts will form the basis for a first draft using the new pandoc-scholar-template I have developed.
+future-work:
+  In future weeks, these outlines will be combined with the posts already made to this site to produce a rough draft of the first paper.
+  This is already in progress, and will be posted here in future weeks, once greater revision has been carried out.
+  The manuscript uses the same pandoc-scholar-template described and linked above.
+  This approach appears to be incredibly powerful for keeping things simple and professional, and reducing unnecessary work in porting lab-book posts directly into the manuscript.
 key-points:
   - markdown approach to manuscript creation is simple and convenient
   - allows focus to remain on content rather than formatting details

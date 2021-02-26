@@ -5,7 +5,7 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-01-25
 prev:
-  post: 2021-01-17-thermochem-vapor-database
+  post: posts/2021-01-17-thermochem-vapor-database
   title: Thermochemical Database for vaporization/condensation
 motivation:
   The 1970s saw a major scientific push to understand the lunar samples returned from the moon landing missions, spurring a host of experimental studies on lunar samples aimed at uncovering the geologic history of the lunar surface.

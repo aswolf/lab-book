@@ -5,10 +5,10 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-11-12
 prev:
-  post: 2020-11-05-MEXQAL
+  post: posts/2020-11-05-MEXQAL
   title: Calculating phase composition with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)
 next:
-  post: 2020-11-19-MEXQAL-rapid-geo-benchmark
+  post: posts/2020-11-19-MEXQAL-rapid-geo-benchmark
   title: Least-squares-optimized MEXQAL calculations for geo-phases
 key-points:
   - Typical igneous phases (liquid, Clinopyroxene, Feldspar, and Spinel) are used to test the MEXQAL method

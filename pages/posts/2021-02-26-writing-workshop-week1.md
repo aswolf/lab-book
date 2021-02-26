@@ -5,7 +5,7 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2021-02-26
 prev:
-  post: 2021-02-17-writing-workshop-syllabus
+  post: posts/2021-02-17-writing-workshop-syllabus
   title: Manuscript Revision Writing Workshop Syllabus
 # next:
 #   post:

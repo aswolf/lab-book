@@ -5,11 +5,17 @@ active: lab-book
 author: Aaron S. Wolf
 date: 2020-11-25
 prev:
-  post: 2020-11-05-MEXQAL
+  post: posts/2020-11-05-MEXQAL
   title: Calculating phase composition with the Metastable eXchange EQuilibrium ALgorithm (MEXQAL)
 next:
-motivation: Subsolidus experiments involving multi-phase assemblages pose unique challenges to thermodynamic model development, due to their lack of an omnicomponent phase like silicate liquid. Determining chemical potentials or phase saturation affinities for model calibration & assessment must resort to more indirect methods for determining system conditions. This post focuses presenting and developing these methods and concepts.
-future-work: In a future post, we will examine the more elaborate method of extracting partial chemical potential constraints from compositionally incomplete lookup phase assemblages. Additionally, we will apply these theoretical concepts to realistic subsolidus phase assemblages. Utilizing the pMELTS thermodynamic model, we will demonstrate the quantitative power of these chemical potential constraints in a model calibration setting.
+motivation:
+  Subsolidus experiments involving multi-phase assemblages pose unique challenges to thermodynamic model development, due to their lack of an omnicomponent phase like silicate liquid.
+  Determining chemical potentials or phase saturation affinities for model calibration & assessment must resort to more indirect methods for determining system conditions.
+  This post focuses presenting and developing these methods and concepts.
+future-work:
+  In a future post, we will examine the more elaborate method of extracting partial chemical potential constraints from compositionally incomplete lookup phase assemblages.
+  Additionally, we will apply these theoretical concepts to realistic subsolidus phase assemblages.
+  Utilizing the pMELTS thermodynamic model, we will demonstrate the quantitative power of these chemical potential constraints in a model calibration setting.
 key-points:
   - Saturated phases are those present in the equilibrium assemblage and jointly define the chemical potentials of the system (as required by the conditions of equilibrium).
   - Undersaturated (missing) phases are distinguished by vertical energy offsets representing saturation affinities.
