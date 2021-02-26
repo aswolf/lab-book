@@ -12,6 +12,6 @@ Participants should form small groups to provide accountability and feedback for
 Depending on work intensity, it should take 1 to 2 months to complete the workshop, producing a mature manuscript draft that is ready for full review by co-authors, followed by journal submission soon thereafter.
 
 ## Reading & Assignment Handouts
-* [Syllabus](workshop-syllabus.html)
-* [Handout 1: Writing revision & the creation of value](workshop-handout1.html)
-* [Handout 2: See how others view your work with a reverse outline](workshop-handout2.html)
+* [Syllabus](writing-workshop/workshop-syllabus.html)
+* [Handout 1: Writing revision & the creation of value](writing-workshop/workshop-handout1.html)
+* [Handout 2: See how others view your work with a reverse outline](writing-workshop/workshop-handout2.html)

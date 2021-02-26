@@ -8,6 +8,9 @@ BIB_FILE=refs.bib
 posts_md = $(wildcard pages/posts/*.md)
 posts_html = $(patsubst pages/posts/%.md,docs/posts/%.html,$(posts_md))
 
+workshop_md = $(wildcard pages/writing-workshop/*.md)
+workshop_html = $(patsubst pages/writing-workshop/%.md,docs/writing-workshop/%.html,$(workshop_md))
+
 pages_md = $(wildcard pages/*.md)
 pages_html = $(patsubst pages/%.md,docs/%.html,$(pages_md))
 
@@ -43,7 +46,7 @@ POST_CSS_HTML_OPTIONS = --template=templates/post.html --css templates/main.css 
 
 
 .PHONY : all
-all : templates images figs docs pages posts post_drafts
+all : templates images figs docs pages posts workshop post_drafts
 	touch docs/.nojekyll
 
 .PHONY : templates
@@ -72,6 +75,9 @@ pages : $(pages_html)
 
 .PHONY : posts
 posts : $(posts_html)
+
+.PHONY : workshop
+workshop : $(workshop_html)
 
 .PHONY : post_drafts
 post_drafts : $(post_drafts_html)
@@ -113,18 +119,19 @@ docs/projects.html : pages/projects.md $(templates) $(images)
 docs/writing-tracker.html : pages/writing-tracker.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
-docs/writing-workshop.html : pages/writing-workshop.md $(templates) $(images)
-	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+
+# docs/writing-workshop.html : pages/writing-workshop.md $(templates) $(images)
+# 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 # Temporary location
-docs/workshop-syllabus.html : pages/workshop-syllabus.md $(templates) $(images)
-	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
-
-docs/workshop-handout1.html : pages/workshop-handout1.md $(templates) $(images)
-	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
-
-docs/workshop-handout2.html : pages/workshop-handout2.md $(templates) $(images)
-	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+# docs/workshop-syllabus.html : pages/workshop-syllabus.md $(templates) $(images)
+# 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+#
+# docs/workshop-handout1.html : pages/workshop-handout1.md $(templates) $(images)
+# 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+#
+# docs/workshop-handout2.html : pages/workshop-handout2.md $(templates) $(images)
+# 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 #########
 # Posts #
@@ -135,6 +142,12 @@ docs/workshop-handout2.html : pages/workshop-handout2.md $(templates) $(images)
 docs/posts/%.html : pages/posts/%.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(POST_CSS_HTML_OPTIONS) -o $@ -s $<
 	# pandoc --citeproc --bibliography=$(BIB_FILE) --template=templates/post.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax -o $@ -s $<
+
+
+docs/writing-workshop/%.html : pages/writing-workshop/%.md $(templates) $(images)
+	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+
+
 
 ##########
 # Drafts #
@@ -159,3 +172,4 @@ clean :
 	rm -rf docs/*
 	mkdir docs/drafts
 	mkdir docs/posts
+	mkdir docs/writing-workshop
