@@ -109,6 +109,15 @@ docs/writing-tracker.html : posts/writing-tracker.md $(templates) $(images)
 docs/writing-workshop.html : posts/writing-workshop.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
+# Temporary location
+docs/workshop-syllabus.html : posts/workshop-syllabus.md $(templates) $(images)
+	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+
+docs/workshop-handout1.html : posts/workshop-handout1.md $(templates) $(images)
+	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
+
+docs/workshop-handout2.html : posts/workshop-handout2.md $(templates) $(images)
+	pandoc $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 #########
 # Posts #
