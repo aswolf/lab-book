@@ -13,15 +13,16 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(02/17/2021)*
-* [**Manuscript Revision Writing Workshop Syllabus**](2021-02-17-writing-workshop-syllabus.html)
+## Latest Posting *(02/26/2021)*
+* [**Writing Workshop Week 1: Reverse Outlines & Creating Value**](2021-02-26-writing-workshop-week1.html)
 
-## Next Posting *(Due: 02/25/2021)*
+## Next Posting *(Due: 03/04/2021)*
 * **TBD**
 
 </div>
 
 ## Past Entries
+* [*2021-02-26:* **Writing Workshop Week 1: Reverse Outlines & Creating Value**](2021-02-26-writing-workshop-week1.html)
 * [*2021-02-17:* **Manuscript Revision Writing Workshop Syllabus**](2021-02-17-writing-workshop-syllabus.html)
 * [*2021-02-06:* **Data-weights for Meaningful Models**](2021-02-06-meaningful-data-weights.html)
 * [*2021-02-03:* **Quantitative modeling of rock formation histories**](2021-02-03-rock-fitness-metric.html)

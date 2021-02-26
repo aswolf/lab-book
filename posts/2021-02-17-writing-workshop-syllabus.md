@@ -4,9 +4,9 @@ title: Academic Manuscript Revision Workshop
 active: lab-book
 author: Aaron S. Wolf
 date: 2021-02-17
-# next:
-#   post:
-#   title:
+next:
+  post: 2021-02-26-writing-workshop-week1
+  title: 'Writing Workshop Week 1: Reverse Outlines & Creating Value'
 motivation:
   This is a syllabus for a writing workshop I've developed for early-career academic professionals aimed at building writing revision skills from the ground up.
   Revising your own writing is a critical skill for academic success, but often receives little systematic attention in STEM fields.
