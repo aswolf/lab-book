@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <base href="/lab-book/" target="_self">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-03-12" />
+    
+  <title>Approximating entropy due to mixing through multiplicity tuning</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+      
+      <!-- pandoc-eqnos: equation style -->
+      <style>
+        .eqnos { display: inline-block; position: relative; width: 100%; }
+        .eqnos br { display: none; }
+        .eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }
+      </style>
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+
+                  <li><a href="writing-workshop">Writing-Workshop</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Approximating entropy due to mixing through multiplicity tuning</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-03-12) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="posts/2020-12-04-basic-solution-perturbation-models.html">
+        Basic composition-perturbation models for solution phases</a>
+     </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href=".html">
+        </a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> To construct a local regular solution approximation that accurately extrapolates in composition space, it is important to separate entropy and enthalpy contributions. While it is possible to directly fit the Gibbs curvature matrix to determine regular solution mixing parameters (<a href="posts/2020-12-04-basic-solution-perturbation-models.html">see previous post</a>), this approach ignores important complications due to ordering that dominate entropy for complex solutions. It is much better, instead, to directly model the entropy surface (which is primarily responsible for the behavioral richness of most complex solution phases), and then combine this entropy approximation with a simple quadratic representation of the enthalpy of mixing. In this post, we outline a straightforward framework for modeling the local entropy surface due to mixing, testing it against the properties of geological phases under realistic igneous conditions. We focus this benchmarking effort on the simplest implementation of the local entropy model, multiplicity-tuning, to build an understanding of its strengths and weaknesses, before moving on to the full parameterization in a future post. </em> </b>
+    </div>
+  
+
+      <div class="box" markdown="1">
+      <h2>Key Points</h2>
+      <ul>
+                  <li> A local mixing entropy approximation is proposed; multiplicity &amp; basis factors for each species component scale and stretch composition space to best match the shape of the entropy surface. </li>
+                  <li> Linear least squares is used to determine multiplicity factors from local entropy gradient. </li>
+                  <li> Monte Carlo perturbation benchmark tests multiplicity-tuned entropy approximation on geo-phases. </li>
+                  <li> The logarithmic form of ideal entropy of mixing causes entropy gradient errors to grow like the fractional perturbation magnitude for each component, providing a rough upper error bound for any approximate solution model. </li>
+                  <li> Extrapolation accuracy is found to be good for simple solutions (e.g. liquid &amp; feldspar) but poor for complex phases with ordering (e.g. clinopyroxene &amp; spinel). </li>
+              </ul>
+    </div>
+  
+
+  <article class="post-content">
+    <!-- content -->
+    <h2 id="local-entropy-of-mixing-approximation-for-complex-phases">Local entropy of mixing approximation for complex phases</h2>
+    <!-- # [[202103031634]] Local entropy of mixing approximation for complex phases -->
+    <p>A local entropy approximation represents the entropy surface of a solution phase in the region surrounding a reference composition. This approximation provides a computationally efficient and accurate method for calculating evolving phase properties as the composition of the solution is progressively altered. The local mixing entropy is represented with a modified form of the standard ideal entropy of mixing, applied to a set of dependent species that fully span the compositional space (in place of independent endmember components): <span id="eq:modified-Smix" class="eqnos"><span class="math display">\[
+    S_{mix} = -R \sum_i m_i \hat{n}_i \log{\hat{X}_i}
+    \]</span><span class="eqnos-number">(1)</span></span>  where <span class="math inline">\(\hat{n}_i\)</span> are the molar abundances of the dependent species in the solution, and <span class="math inline">\(m_i\)</span> are the effective multiplicities for each species that effectively scale the entropic mixing effect for each species. We will show that introducing variable multiplicity factors for each species is sufficient to approximately capture the behavior of the simpler solution phases, like the regular (and sub-regular) solution models describing silicate liquids and feldspar. More complex solution phases, like clinopyroxene and spinel, require additional modeling flexibility to capture the strong asymmetric effects of atomic ordering within the solution. Adjustable molar basis fractions can provide this additional flexibility by redefining the molar formula unit of each species (<span class="math inline">\(\hat{n}_i = n_i / f_i\)</span>), effectively introducing asymmetry into the solution model by stretching the compositional solution space. We will begin by exploring the simpler case of individual multiplicity factors for each species, demonstrating its efficacy for simpler solution phases, before adding the complication of basis fractions. <!-- [[202103050855]] --></p>
+    <h2 id="multiplicity-tuning-for-approximating-mixing-entropy">Multiplicity tuning for approximating mixing entropy</h2>
+    <!-- # [[202103050855]] Multiplicity tuning for approximating mixing entropy -->
+    <p>A tuned multiplicity solution represents one of the simplest non-ideal local entropy approximations, introducing individual multiplicity factors specific to each species in the solution. By taking molar derivatives of the mixing entropy equation (Eq. <a href="#eq:modified-Smix">1</a>), we derive expressions for the entropy gradient and curvature for this model: <span id="eq:mult-tuned-Sderiv" class="eqnos"><span class="math display">\[
+    \begin{align}
+    \frac{dS}{d\hat{n}_k} &amp;= -R m_k \log \hat{X}_k - R m_k + R \sum_i m_i \hat{X}_i\\
+    \frac{d^2S}{d\hat{n}_k d\hat{n}_l} &amp;= - \frac{R m_k }{\hat{X}_k} \delta_{kl}+ R(m_k+m_l)  - R \sum_i m_i \hat{X}_i\\
+    \end{align}
+    \]</span><span class="eqnos-number">(2)</span></span>  where <span class="math inline">\(\delta_{kl}\)</span> is the Kronecker delta, which takes a non-zero value only when <span class="math inline">\(l\)</span> and <span class="math inline">\(k\)</span> are equal. These expressions reduce to a strictly ideal solution when all multiplicities are set to unity (<span class="math inline">\(m_k=1\)</span>). While it is tempting to construct a simpler entropy gradient model without the second and third terms in the gradient expression above, it is a grievous mistake that produces an unphysical description of entropy. These additional terms—which cancel for the ideal solution—are absolutely necessary to maintain the requisite symmetry of the curvature matrix, introducing the required multiplicity-dependence for both species <span class="math inline">\(k\)</span> and <span class="math inline">\(l\)</span>.</p>
+    <p>These expressions reveal a strict linear dependence on multiplicity factors, enabling the use of linear least squares methods to fit a local entropy model. The fitted multiplicity parameter values can thus be determined directly from the calculated entropy gradient evaluated at a reference composition. The accuracy of this model depends strongly on the complexity of the particular solution phase, with phases displaying strong ordering behaviors requiring a more complex modeling approach (that includes adjustable basis fractions). <!-- [[202103050941]] --></p>
+    <h2 id="benchmarking-entropy-of-tuned-multiplicity-approximation">Benchmarking entropy of tuned-multiplicity approximation</h2>
+    <!-- # [[202103050941]] Benchmarking entropy of tuned-multiplicity approximation -->
+    <p>To test the real-world accuracy of the tuned-multiplicity model for mixing entropy, we apply it to phase compositions derived for a realistic geologically typical situation. <!-- [[202103050855]] --> The phases and compositions used in this benchmark test are derived from simulating the equilibrium crystallization of MORB liquid (<a href="posts/2020-11-12-MEXQAL-geo-application.html">see previous post</a>). We begin by fitting the approximate models for each phase: liquid (liq), feldspar (fsp), clinopyroxene (cpx), and spinel (spl) at geologically-relevant temperature, pressure, and composition. To quantify the accuracy of these fitted models, we then adopt a simple Monte Carlo perturbation approach. Starting with the appropriate geo-reference compositions, we randomly perturb the fractional amount of each solution species and recalculate the entropy and entropy-gradient. Deviations of the local approximation from reality are calculated for a large number of random compositional perturbations and summarized by the average rms error.</p>
+    <h2 id="expected-compositional-extrapolation-error-for-entropy-gradient">Expected compositional extrapolation error for entropy gradient</h2>
+    <!-- ## [[202103081121]] Compositional extrapolation error for entropy gradient -->
+    <p>To place the Monte Carlo benchmarking results into a broader context, we derive a simple expression for the expected growth in the compositional extrapolation error. Due to the logarithmic composition-dependence of the entropy of mixing, we consider random logarithmic (or fractional) compositional perturbations, where <span class="math inline">\(\delta \hat{X}\)</span> describes the fractional adjustments to the abundances of each species in the solution away from their reference values. We can approximate the entropy gradient for an ideal solution as: <span class="math display">\[
+    \frac{1}{R}\frac{dS}{d\hat{n}} \sim \log \hat{X} \approx \log [\hat{X}_r (1 + \delta \hat{X})] \approx log\hat{X}_r + \delta \hat{X} \approx \frac{1}{R}  \left. \frac{dS}{d\hat{n}}\right|_r + \delta \hat{X}
+    \]</span> where <span class="math inline">\(\hat{X}_r\)</span> is the reference composition. We can thus see that the perturbation adjustment adds linearly with the reference entropy gradient, providing a trivially simple form for the expected error magnitude: <span class="math display">\[
+    \Delta (dS / d\hat{n})/R  \sim \delta \hat{X}
+    \]</span> Potential compositional perturbations are spread over many orders of magnitude, and thus it is useful to recognize that the (scaled) logarithmic error in the entropy gradient falls on the one-to-one line when plotted against average perturbation magnitude. For non-ideal solution phases, we should consider the modified local entropy approximation in place of an ideal solution, but the form of the entropy gradient is nearly identical (see Eq. <a href="#eq:mult-tuned-Sderiv">2</a>), differing only in an additional scaling factor and constant offset terms involving the multiplicity factors. We thus expect a similar linear growth of extrapolation error, which falls close to but offset from the one-to-one line, depending on the effective species multiplicities. The one-to-one line thus represents the average expected error growth assuming fixed entropy gradient (neglecting composition dependence), and thus the performance of a particular compositional model can be measured against this theoretical default.</p>
+    <h2 id="approximation-performance-on-realistic-igneous-phases">Approximation performance on realistic igneous phases</h2>
+    <p>The Monte Carlo benchmarking process is repeated for a range of perturbation sizes to explore how accuracy scales with the extrapolation magnitude and also how it compares with the mathematically expected error bound. Figures <a href="#fig:simple-mult-benchmark">1</a> and <a href="#fig:complex-mult-benchmark">2</a> show the results of this Monte Carlo benchmark analysis, where shaded regions represent the range of approximation errors for the entropy gradient across all species components. For comparison, the dashed line in each figure marks the one-to-one line, corresponding to model deviations that perfectly track the compositional perturbation size.</p>
+    <div id="fig:simple-mult-benchmark" class="fignos">
+    <figure>
+    <img src="figs/202103070647-mult-tuned-dSdn-error-simple-soln.png" style="width:100.0%" alt="Figure 1: Multiplicity-tuned approximation for simple solutions." /><figcaption aria-hidden="true"><span>Figure 1:</span> Multiplicity-tuned approximation for simple solutions.</figcaption>
+    </figure>
+    </div>
+    <div id="fig:complex-mult-benchmark" class="fignos">
+    <figure>
+    <img src="figs/202103070646-mult-tuned-dSdn-error-complex-soln.png" style="width:100.0%" alt="Figure 2: Multiplicity-tuned approximation for complex solutions." /><figcaption aria-hidden="true"><span>Figure 2:</span> Multiplicity-tuned approximation for complex solutions.</figcaption>
+    </figure>
+    </div>
+    <p>As shown in the figures above, model deviations grow in tandem with the size of the compositional extrapolation, but these deviations remain relatively small for simple solution models like silicate liquid and feldspar. For more complex solution models involving considerable preferential ordering (like clinopyroxene and spinel), the same growth in model deviations is seen but with a baseline accuracy that is considerably worse. Performance for these complex phases is typically no better than the expected accuracy limit neglecting all composition dependence, thus preventing useful application of this model.</p>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> The poor performance of simple multiplicity tuning for complex solutions motivates us to introduce an additional refinement to the local entropy model, through tuning of the basis components for the solution. In a future week, we will derive the non-linear expressions for approximating entropy with basis-tuning, in the hope that they will dramatically improve extrapolation accuracy for complex ordered solutions. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>

@@ -15,8 +15,8 @@ pages_md = $(wildcard pages/*.md)
 pages_html = $(patsubst pages/%.md,docs/%.html,$(pages_md))
 
 # fix drafts
-post_drafts_md = $(wildcard posts/drafts/*.md)
-post_drafts_html = $(patsubst posts/drafts/%.md,docs/drafts/%.html,$(post_drafts_md))
+post_drafts_md = $(wildcard pages/drafts/*.md)
+post_drafts_html = $(patsubst pages/drafts/%.md,docs/drafts/%.html,$(post_drafts_md))
 
 templates = $(wildcard templates/*)
 images = $(wildcard images/*)
@@ -87,7 +87,7 @@ post_drafts : $(post_drafts_html)
 draft :
 	# basenm = basename $(file) .md
 	# echo $(basenm)
-	cp -n templates/post-template.md posts/drafts/$(file).md
+	cp -n templates/post-template.md pages/drafts/$(file).md
 
 .PHONY : preview
 preview :
@@ -100,7 +100,7 @@ preview-drafts :
 # fix TK
 .PHONY : export
 export :
-	pandoc --citeproc --bibliography=$(BIB_FILE) -t docx --mathjax -o export/$(file).docx -s posts/$(file).md
+	pandoc --citeproc --bibliography=$(BIB_FILE) -t docx --mathjax -o export/$(file).docx -s pages/$(file).md
 
 
 ##############
@@ -156,11 +156,11 @@ docs/writing-workshop/%.html : pages/writing-workshop/%.md $(templates) $(images
 
 # fix TK
 # all posts use custom post.html pandoc template
-docs/drafts/%.html : posts/drafts/%.md $(templates) $(images)
+docs/drafts/%.html : pages/drafts/%.md $(templates) $(images)
 	pandoc $(PANDOC_WRITER_OPTIONS) $(POST_CSS_HTML_OPTIONS) -o $@ -s $<
 
 # --template=templates/index-template.html --css templates/main.css -t html5 -B templates/head.html -A templates/foot.html --mathjax
-docs/drafts/index.html : posts/drafts/index.md $(templates) $(images)
+docs/drafts/index.html : pages/drafts/index.md $(templates) $(images)
 	pandoc  $(PANDOC_WRITER_OPTIONS) $(INDEX_CSS_HTML_OPTIONS) -o $@ -s $<
 
 ###########

@@ -5,6 +5,7 @@ active: projects
 ---
 
 ## Thermodynamic Equilibrium Algorithms
+* [*2021-03-12:* **Approximating entropy due to mixing through multiplicity tuning**](posts/2021-03-12-mult-tuned-entropy-approx.html)
 * [*2020-12-18:* **Urgently seeking equilibrium Working Draft (Paper I)**](posts/2020-12-18-equilibrium-paper-draft.html)
 * [*2020-12-11:* **Urgently seeking equilibrium: Manuscript outlines for equilibrium algorithms**](posts/2020-12-11-equilibrium-paper-outlines.html)
 * [*2020-12-04:* **Basic composition-perturbation models for solution phases**](posts/2020-12-04-basic-solution-perturbation-models.html)
