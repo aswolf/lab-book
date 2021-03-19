@@ -13,15 +13,16 @@ Providing a public view of scientific research work has numerous advantages:
 * Getting feedback on work in progress
 
 <div class="box" markdown="1">
-## Latest Posting *(03/12/2021)*
-* [*2021-03-12:* **Approximating entropy due to mixing through multiplicity tuning**](posts/2021-03-12-mult-tuned-entropy-approx.html)
+## Latest Posting *(03/19/2021)*
+* [*2021-03-19:* **Simplified Rock Metric Outline**](posts/2021-03-19-simplified-rock-metric-outline.html)
 
-## Next Posting *(Due: 03/19/2021)*
+## Next Posting *(Due: 03/26/2021)*
 * **TBD**
 
 </div>
 
 ## Past Entries
+* [*2021-03-19:* **Simplified Rock Metric Outline**](posts/2021-03-19-simplified-rock-metric-outline.html)
 * [*2021-03-12:* **Approximating entropy due to mixing through multiplicity tuning**](posts/2021-03-12-mult-tuned-entropy-approx.html)
 * [*2021-02-26:* **Writing Workshop Week 1: Reverse Outlines & Creating Value**](posts/2021-02-26-writing-workshop-week1.html)
 * [*2021-02-17:* **Manuscript Revision Writing Workshop Syllabus**](posts/2021-02-17-writing-workshop-syllabus.html)

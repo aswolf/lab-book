@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <base href="/lab-book/" target="_self">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-03-19" />
+    
+  <title>Simplified Rock Metric Outline</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+
+                  <li><a href="writing-workshop">Writing-Workshop</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Simplified Rock Metric Outline</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-03-19) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="posts/2021-02-03-rock-fitness-metric.html">
+        Quantitative modeling of rock formation histories</a>
+     </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href=".html">
+        </a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> The following is a somewhat detailed outline for a simplified rock fitness metric to be used in modeling the formation histories of igneous rock sequences. This work will be incorporated into a proposal for continued development of the magma chamber simulator. <a href="posts/2021-02-03-rock-fitness-metric.html">Past writing describing this metric</a> relied too heavily on background knowledge in statistics and numerical simulation, and was not properly tailored to the target audience of petrologist and geochemists. This outline thus represents a significant reworking of that previous idea, proposing how a significantly simplified version could be presented and implemented. </em> </b>
+    </div>
+  
+
+  
+
+  <article class="post-content">
+    <!-- content -->
+    <h2 id="justify-need-for-quantitative-metric">Justify need for quantitative metric</h2>
+    <ul>
+    <li>Why do we even need something better than fit-by-eye? What does a quantitative metric give us?</li>
+    <li>How does a fitness metric capture relative model quality?</li>
+    <li>How does it reproduce our by-eye judgement? How does it go beyond our subjective judgement?</li>
+    </ul>
+    <h2 id="how-do-we-actually-model-the-formation-history-for-suites-of-rock-samples">How do we actually model the formation history for suites of rock samples?</h2>
+    <ul>
+    <li>Each sample represents a snapshot of the evolutionary path of the magma chamber.</li>
+    <li>Fine-grained ground mass represents liquid and phenocrysts represent crystal cargo, fractionating directly from that liquid.</li>
+    <li>The liquid composition should be given by the groundmass, but for low phenocryst abundance, this is roughly equal to whole rock composition. <strong>(How often is this assumed? Should we change name from bulk composition to liquid or groundmass or matrix composition?)</strong></li>
+    </ul>
+    <h2 id="simple-bulk-composition-metric">Simple bulk composition metric</h2>
+    <ul>
+    <li>Create a rock fitness metric (<span class="math inline">\(\chi^2\)</span>), beginning with a simplified metric considering only whole rock composition.</li>
+    </ul>
+    <p><span class="math display">\[
+    \chi^2 = \sum_s^{\textrm{samples}} r_s^2
+    \]</span></p>
+    <ul>
+    <li>Initially, consider only major rock-forming oxides (which determine phase equilibria):</li>
+    </ul>
+    <p><span class="math display">\[
+    r_s^2 (\textrm{bulk})= \frac{1}{\sigma_{\textrm{bulk}}^2} \sum_i^{\textrm{oxides}} [\Delta X_i(s)]^2
+    \]</span></p>
+    <ul>
+    <li><span class="math inline">\(\Delta X_i(s)\)</span> is the compositional model residual or misfit (in wt%) of the <span class="math inline">\(i^{\rm th}\)</span> major oxide for sample <span class="math inline">\(s\)</span>.</li>
+    <li><span class="math inline">\(\sigma^2_{\textrm{bulk}}\)</span> is the variability (or variance) describing the typical overall wt% deviation from the mean composition.</li>
+    <li>Scaling residuals by variability effectively normalizes the metric, ensuring that reasonable models have metric values near one (<span class="math inline">\(\chi^2\approx1\)</span>).</li>
+    </ul>
+    <h3 id="a-brief-aside-on-matching-compositional-trends">A brief aside on matching compositional trends</h3>
+    <ul>
+    <li>Simple explanation of compositional trajectory matching (Hausdorff distance).</li>
+    <li>Allows us to infer/estimate model epoch for each individual sample.</li>
+    </ul>
+    <h2 id="steens-major-oxide-modeling-example">Steens major oxide modeling example</h2>
+    <ul>
+    <li>(Steens application already introduced in proposal, right?)</li>
+    <li>Compare hand-tuned models: Anorthisite/Gabbro recharge at low/high pressure; fractional crystallization default model</li>
+    <li>All models fit data well, but are indistinguishable with major oxides alone</li>
+    <li><strong>Include tables and figures from python notebook analysis</strong></li>
+    </ul>
+    <h2 id="distinguishing-evolutionary-models-using-phase-compositions-and-chemical-tracers">Distinguishing evolutionary models using phase compositions and chemical tracers</h2>
+    <ul>
+    <li>While whole rock compositions track broad chemical evolution in the geologic system, individual phase compositions and chemical tracers are generally needed to break model degeneracies.</li>
+    <li>Models incorporating divergent evolutionary processes can often produce frustratingly similar chemical trends in the major oxides.</li>
+    <li>Chemical tracers are compositional attributes (like trace elements, radioactive or stable isotopic abundances, and trace components within particular phases) that do not affect the equilibrium phase assemblage, but are sensitive to the entire chemical and environmental history of the system.</li>
+    <li>Phase assemblage (presence/absence) constraints are applied as a filter, only allowing models with acceptable assemblage predictions.</li>
+    <li>For a particular rock sample, whole rock composition only provides a chemical snapshot of the magma chamber, while individual phase compositions are potentially sensitive to environmental conditions (e.g. temperature, pressure, and fO2) due to constraints imposed by chemical equilibrium.</li>
+    <li>Potentially even more powerful are trace element, and stable &amp; radiogenic isotopic abundances, which can constrain timing information, due to their sensitivity to evolutionary path</li>
+    </ul>
+    <p><span class="math display">\[
+    r_s^2 = w_\textrm{bulk} \cdot r_s^2(\textrm{bulk})
+      + \sum_\phi^\textrm{phases} w_\phi \cdot r_s^2(\phi)
+      + \sum_t^{\textrm{tracers}} w_t \cdot r_s^2(t)
+    \]</span></p>
+    <ul>
+    <li>with new phase composition and chemical tracer abundance contributions to the fitness metric given by:</li>
+    </ul>
+    <p><span class="math display">\[
+    r_s^2 (\phi)= \frac{1}{\sigma_{X_\phi}^2} \sum_j^{\textrm{components}} [\Delta X^\phi_j(s)]^2
+    \]</span></p>
+    <p><span class="math display">\[
+    r_s^2 (t)= \frac{1}{\sigma_{y_t}^2}  [\Delta y_t(s)]^2
+    \]</span></p>
+    <ul>
+    <li><p>where <span class="math inline">\(\Delta X^\phi_j(s)\)</span> is the model concentration residual of the <span class="math inline">\(j^{\rm th}\)</span> component of phase <span class="math inline">\(\phi\)</span> for sample <span class="math inline">\(s\)</span>, evaluated in mol fraction (<strong>Is it a problem if phases composition is in mol fraction and whole rock composition is in wt%? Do we need a different symbol (not X) for wt%, like m_i?</strong>)</p></li>
+    <li><p>The ability to combine unlike data types, like disparate chemical tracers and phase compositions, into a single rock fitness metric is critical for its utility; variability scaling factors enable this feat, expressing the model fitness in terms of the fraction of the observed variability signal captured by the model relative to the observed variability in each measurement. (In this way, the rock metric beahaves like a generalization of the familiar R-square fitting metric).</p></li>
+    <li><p>Discussion of user-defined weighting factors; variability scaling ensures that default value of 1 for all fitting weights gives a reasonable starting point, to be refined during model exploration</p></li>
+    <li><p>Brief discussion of how phase info and chemical tracers can help improve model epoch matching, especially as they are much more sensitive to evolutionary history.</p></li>
+    </ul>
+    <h2 id="steens-phase-composition-and-trace-element-modeling">Steens phase composition and trace element modeling</h2>
+    <ul>
+    <li>Demonstrate how trace elements and Anorthite composition distinguish between competing models</li>
+    <li>Exploration of weighting factor adjustments may or may not be needed?</li>
+    <li>Recover/contradict model preference determined by-eye, and discuss agreement/disagreement <strong>Waiting on upcoming chemical tracer analysis. Data to be provided for all samples and all models by Valerie.</strong></li>
+    </ul>
+    <h2 id="distinguishing-sub-groups-within-rock-sample-suites">Distinguishing sub-groups within rock sample suites</h2>
+    <ul>
+    <li>Explore with example of upper vs lower Steens.</li>
+    <li>Can see based on stratigraphic data that potentially distinct groups exist.</li>
+    <li>User provides field-based meta-data, splitting samples into potentially different categories.</li>
+    <li>Model-dependent clustering analysis can determine if sample suites actually belong to separate evolutionary groups (do compositional, tracer, and meta-data actually reflect different evolutionary scenarios?)</li>
+    <li>The net model residual (including all compositional and tracer information) can help discern data meaningful data groupings by clustering well-peforming data subsets for one model vs another.</li>
+    <li><strong>It is very likely that for sufficiently noisy/scattered data like the Steens example, that predefined potential categories based on meta-data (like stratagraphic or textural information) will be required. This anlaysis will determine whether such categories actually point to meaningfully distinct formation histories. In some cases, chemical tracer data may alleviate the need for user-provided potential categories, but this depends on the data signal-to-noise.</strong></li>
+    </ul>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> This document will be reviewed by coauthors to determine what adjustments are needed to properly engage with the desired readers. Given that feedback, I will expand upon this skeletal outline, some of which can be salvaged from previously written material. An expanded and updated discussion of our proposed rock fitness metric will be discussed in a future post. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>
