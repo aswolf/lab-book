@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <base href="/lab-book/" target="_self">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <!-- This line causes strange scaling on smart phone views, perhaps a better option is available than removal? -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /> -->
+      <meta name="author" content="Aaron S. Wolf" />
+        <meta name="dcterms.date" content="2021-03-31" />
+    
+  <title>Basis-tuned entropy approximation for complex solution phases</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+      <link rel="stylesheet" href="templates/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+      <!--
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Your description goes here" />
+          <meta name="keywords" content="your,keywords,goes,here" />
+          <meta name="author" content="Your Name" />
+          <title>Aaron S. Wolf</title>
+      </head>
+      <body> -->
+
+          <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" title="andreas08" media="screen,projection" /> -->
+
+      <div id="container" >
+          <div id="header">
+              <h1>aswolf LabBook</h1>
+              <h2>email: aswolf _at_ umich _dot_ edu</h2>
+          </div>
+
+          <div id="navigation">
+              <ul>
+                  <li><a href="index.html">Index</a></li>
+
+                  <li><a href="projects.html">Projects</a></li>
+
+                  <!-- <li><a href="https://docs.google.com/spreadsheets/d/18hnjkcF4LSEzdFdd0fABXo3-bmSWMSfJb9io6kKTDGw/edit#gid=0">Daily-Tracker</a></li> -->
+                  <li><a href="writing-tracker.html">Daily-Tracker</a></li>
+
+
+                  <li><a href="writing-workshop">Writing-Workshop</a></li>
+
+                  <li><a href="https://aswolf.github.io">Webpage</a></li>
+              </ul>
+          </div>
+
+          <div class="content">
+  
+  <!-- Add post and post-header here -->
+
+  <!-- <div class="post"> -->
+    <!-- <header class="post-header"> -->
+      <header id="title-block-header">
+      <h1 class="title">Basis-tuned entropy approximation for complex solution phases</h1>
+      
+      <br>
+      <h2> &nbsp;&nbsp;&nbsp;
+         Aaron S. Wolf 
+        &nbsp;&nbsp;
+         (2021-03-31) 
+      </h2>
+    </header>
+  
+  <!-- Related post info here -->
+  <class="post-meta">
+    <h4> Related Posts: </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Previous: </em>
+      <a href="posts/2021-03-12-mult-tuned-entropy-approx.html">
+        Approximating entropy due to mixing through multiplicity tuning</a>
+     </h4>
+
+    <h4>       &nbsp;&nbsp;&nbsp; •<em> Next: </em>
+      <a href=".html">
+        </a>
+     </h4>
+
+  </class>
+  <!-- </header> -->
+
+  <br>
+
+  <!-- motivation here -->
+      <div class="box" markdown="1">
+      <h2>Context & Motivation</h2>
+        <b> <em> In the process of finding the equilibrium phase assemblage within a thermodynamic calculation, it is necessary to continuously update the chemical potentials for every phase, as their compositions are refined during the approach to equilibrium. This motivates the construction of a computationally efficient method for approximating the Gibbs energy surface of complex solution phases, most importantly capturing the complicated behavior of the entropy of mixing term. The multiplicity-tuned entropy approximation, <a href="posts/2021-03-12-mult-tuned-entropy-approx.html">previously discussed</a>, provides a useful starting point for building a local entropy extrapolation model, but it fails to deliver the accuracy required. In this post, we present the basis-tuned entropy approximation, which explicitly considers modifications to the mixing species forming the basis of the solution model. </em> </b>
+    </div>
+  
+
+      <div class="box" markdown="1">
+      <h2>Key Points</h2>
+      <ul>
+                  <li> Basis-tuned entropy approximation adjusts the assumed mixing species for the solution model, stretching and reorienting compositional space to capture asymmetries. </li>
+                  <li> Mixing entropy depends strongly on the mixing species, with small values for off-diagonal entropy curvature terms; modeling flexibility is greatly constrained by the choice of mixing species. </li>
+                  <li> Principal solution components represent primary directions of entropy variation and are determined by decomposition of the entropy curvature matrix (iterative approach is adopted to account for small but nonzero off-diagonal terms). </li>
+                  <li> Local mixing species are obtained from principal solution components by imposing non-negativity bounds on elemental abundances along principal directions; 2N possible mixing species are identified and must be culled. </li>
+              </ul>
+    </div>
+  
+
+  <article class="post-content">
+    <!-- content -->
+    <h2 id="basis-tuning-to-approximate-local-mixing-entropy">Basis tuning to approximate local mixing entropy</h2>
+    <!-- ## [[202103080846]] Basis tuning to approximate local mixing entropy -->
+    <p>To represent complex solution phases, we must go a step beyond multiplicity-tuning by adjusting the very basis species used to represent the solution. Solution species can be modified by scaling their relative sizes (effectively stretching the solution space to capture asymmetry) or by constructing linear recombinations of the species (reorienting the solution space to match the primary directions of entropic change). To obtain generalized expressions for the entropy gradient and curvature, we take molar derivatives of the mixing entropy equation: <!-- [[202103031634]] --> <!-- accounting for scaling adjustments to the solution basis ($\hat{n}_i = n_i f_i$) --> <span class="math display">\[
+    \begin{align}
+    \frac{dS}{dn_k} &amp;= -R f_k \left[ m_k \log \hat{X}_k + m_k - \sum_i m_i \hat{X}_i \right]\\
+    \frac{d^2S}{dn_k dn_l} &amp;= -R f_k f_l \left[ \frac{ m_k }{\hat{n}_k} \delta_{kl} - \frac{(m_k+m_l)}{\hat{n}_\textrm{tot}}  + \sum_i m_i \hat{X}_i \right]\\
+    \end{align}
+    \]</span>  where <span class="math inline">\(f_k\)</span> are the molar basis factors that scale the original solution species (<span class="math inline">\(\hat{n}_k = n_k f_k\)</span>), <span class="math inline">\(m_k\)</span> are the multiplicity factors, and <span class="math inline">\(\hat{n}_\textrm{tot} = \sum_i \hat{n}_i\)</span> is the total number of moles in the new solution basis. Deriving this expression involves application of the chain rule to account for the change of basis, introducing the basis factor terms in the expressions above (<span class="math inline">\(d\hat{n}_k / dn_k = f_k\)</span>). Note that the derivatives are taken with respect to the original solution species (not scaled by the basis factors). This distinction is crucial since it relates our model back to the abundances for the original solution components, which are set by the solution composition and are unaffected by changes to the model parameters.</p>
+    <!-- By examining the structure of this expression, we can greater insights into the benefits and limitations of such an approximate model [[202103240850]]. -->
+    <h2 id="diagonal-structure-of-mixing-entropy">Diagonal structure of mixing entropy</h2>
+    <!-- ## [[202103240850]] Diagonal structure of the basis-tuned entropy approximation -->
+    <p>The form of the basis-tuned entropy model underscores an implicit underlying assumption in its application, that the original solution species represent the primary units of chemical mixing. <!-- [[202103080846]] --> This foundational assumption is not surprising given that the approximation is built upon the ideal mixing model, in which solution components are assumed to be independent and mix randomly and free from significant interactions. Such independent mixing behavior manifests in the diagonal-dominant structure of the entropy curvature matrix. This is most readily seen by considering well-behaved solutions in which both multiplicity- and basis-factors take values of order one (<span class="math inline">\(m_k \sim 1\)</span> and <span class="math inline">\(f_k \sim 1\)</span>). With such modest adjustments to the solution basis and multiplicities, the entropy curvature matrix is restricted to off-diagonal terms of order one (with <span class="math inline">\(\hat{n}_\textrm{tot} \sim 1\)</span> and <span class="math inline">\(\sum_i m_i \hat{X}_i \sim 1\)</span>). In contrast, the diagonal terms are able to dominate the entropy curvature as they are inversely proportional to the abundance of the relevant solution species. Low abundance species can thus have arbitrarily large curvature terms that completely drown out any contribution from the off-diagonal terms.</p>
+    <p>This diagonal dominant structure is, of course, modified by the particular values of the multiplicity- and basis-factors, but we cannot escape the fact that molar abundances typically vary over many orders of magnitude. Even though this model was designed to provide the flexibility to capture the behavior of complex species with strong ordering effects, the importance of the originally defined solution species is directly baked into the model, blocking its effectiveness as a generalized entropy approximation tool. We might potentially sidestep this issue, however, by reorienting the solution space along the primary directions of entropic variation, effectively ‘discovering’ the fundamental units of chemical mixing in the solution specific to the local region of composition space. <!-- [[202103240930]] --></p>
+    <h2 id="determine-principle-components-of-solution-mixing">Determine principle components of solution mixing</h2>
+    <!-- ## [[202103240930]] Determine principle components of solution mixing iteratively -->
+    <p>To accurately capture the mixing entropy of complex solution phases, an entropy approximation must directly represent the solution in terms of its chemical mixing components. For simple solutions, the chemical endmembers act as the mixing components over the entire compositional solution space. For complex ordered phases, however, the relative importance of different species within the solution depends on composition (as well as environmental conditions like temperature and pressure). In developing an approximate local entropy model, we must have a method that can empirically determine these effective mixing components based on the local properties of the solution.</p>
+    <p>We propose applying singular value decomposition to the entropy curvature matrix to determine the principal directions of entropic change. Since the entropy curvature is diagonally dominant when expressed in terms of the species actually undergoing mixing, we can therefore use linear algebra to determine these principal directions and from them derive the primary mixing species. <!-- [[202103240850]] and then  [[202103250655]] --> One challenge to this approach is that the curvature matrix is not purely diagonal, having small but important off-diagonal terms. We therefore must determine the mixing species iteratively: finding a best-fit solution for the basis-tuned model, adjusting the curvature matrix to account for the expected off-diagonal contribution, updating the principal mixing species, and repeating until convergence. <!-- [[202103080846]] --> Due to the relative smallness of the off-diagonal terms for most solutions, this process should generally take only a few iterations to achieve satisfactory convergence.</p>
+    <h2 id="derive-mixing-species-from-principal-entropy-directions">Derive mixing species from principal entropy directions</h2>
+    <!-- # [[202103250655]] Derive mixing species from principal entropy directions -->
+    <p>Designing a useful entropy approximation requires determining the local mixing species themselves, rather than merely the vector that points toward them. In selecting the mixing species, we also want to construct an approximate solution space with the largest compositional span possible to maximize the region of compositional accuracy. Each principal entropy vector provides an array of possible mixing species going in either direction, from which we select the best example based on its contribution to the compositional span of the approximate mixing model. This can be conceived of as a binary mixing problem, in which the original reference composition is one mixing endmember and the principal direction (or its negative reflection) is the other endmember. Physical constraints allow only mixtures resulting in non-negative amounts of every element, so each of these compositional vectors is mapped to elemental space using the elemental stoichiometry matrix. In general, the principal compositional vector has some positive and some negative elements, and thus non-negative abundance constraints identify a potential mixing species as the first instance of total removal of one of the elements with increased displacement from the reference composition. In the uncommon case where a principal compositional vector points in a uniformly positive direction for every element, the vector itself represents the potential mixing species. This calculation is repeated for the positive and negative direction of every principal vector, yielding a set of 2N possible mixing species (or N pairs). To determine the final mixing species, we must select one composition from each of the pairs, such that the overall compositional space contains the original reference composition and also spans the largest compositional space possible.</p>
+  </article>
+
+  <!-- future-work here -->
+
+      <br>
+    <div class="box" markdown="1">
+      <h2>Future Directions</h2>
+      <b> <em> The local entropy approximation scheme outlined here provides a useful roadmap for how to make progress representing complex solution phases. In a future post, we will discuss necessary modifications to the mixing species derivation procedure, taking care to handle issues surrounding elements present at trace levels. We will also present a simple method for selecting the final mixing species from the set of possibilities, maximizing the compositional span of the approximate solution model. Finally, we will benchmark this method to explore its computational performance and accuracy for realistic geo-phases. </em> </b>
+    </div>
+  
+      
+      	</div>
+      	<div id="footer">
+      		<p>&copy; 2020 Aaron S. Wolf | Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a></p>
+      	</div>
+
+      	</div>
+      <!-- </body> -->
+      <!-- </html> -->
+  </body>
+
+</html>

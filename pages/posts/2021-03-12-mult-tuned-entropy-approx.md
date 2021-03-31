@@ -8,8 +8,8 @@ prev:
   post: posts/2020-12-04-basic-solution-perturbation-models
   title: Basic composition-perturbation models for solution phases
 next:
-  post:
-  title:
+  post: posts/2021-03-31-basis-tuned-entropy-approx
+  title: Basis-tuned entropy approximation for complex solution phases
 motivation:
   To construct a local regular solution approximation that accurately extrapolates in composition space, it is important to separate entropy and enthalpy contributions.
   While it is possible to directly fit the Gibbs curvature matrix to determine regular solution mixing parameters ([see previous post](posts/2020-12-04-basic-solution-perturbation-models.html)), this approach ignores important complications due to ordering that dominate entropy for complex solutions.
